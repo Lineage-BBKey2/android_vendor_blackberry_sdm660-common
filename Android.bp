@@ -6,6 +6,7 @@ soong_namespace {
     imports: [
         "device/blackberry/sdm660-common",
         "hardware/qcom-caf/msm8998",
+//        "hardware/qcom/gps/msm8998",
         "hardware/qcom-caf/wlan",
         "vendor/qcom/opensource/dataservices",
         "vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um",
@@ -13248,33 +13249,7 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.am@1.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.radio.am@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
+
 
 cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.radio.ims@1.0",
