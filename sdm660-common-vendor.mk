@@ -87,8 +87,6 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a508_zap.b01:$(TARGET_COPY_OUT_VENDOR)/firmware/a508_zap.b01 \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a508_zap.b02:$(TARGET_COPY_OUT_VENDOR)/firmware/a508_zap.b02 \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a508_zap.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/a508_zap.mdt \
-    vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a512_zap.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/a512_zap.b00 \
-    vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a512_zap.b02:$(TARGET_COPY_OUT_VENDOR)/firmware/a512_zap.b02 \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a530_gpmu.fw2:$(TARGET_COPY_OUT_VENDOR)/firmware/a530_gpmu.fw2 \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a530_pfp.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/a530_pfp.fw \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a530_pm4.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/a530_pm4.fw \
@@ -147,6 +145,10 @@ PRODUCT_PACKAGES += \
     libantradio \
     vendor.qti.hardware.fm@1.0 \
     com.qualcomm.qti.ant@1.0_vendor \
+    com.qualcomm.qti.dpm.api@1.0_vendor \
+    com.qualcomm.qti.imscmservice@1.0_vendor \
+    com.qualcomm.qti.imscmservice@1.1_vendor \
+    com.quicinc.cne.api@1.0 \
     com.quicinc.cne.constants@1.0 \
     com.quicinc.cne.constants@2.0 \
     com.quicinc.cne.server@2.0 \
@@ -159,14 +161,12 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.keymaster@3.0-impl-qti \
-    audio.primary.default \
-    audio.r_submix.default \
-    audio.usb.default \
     com.qualcomm.qti.ant@1.0-impl \
     sound_trigger.primary.sdm660 \
     vendor.qti.hardware.fm@1.0-impl \
     vulkan.sdm660 \
     lib-dplmedia \
+    lib-rtpdaemoninterface \
     libC2D2 \
     libCB \
     libFlacSwDec \
@@ -223,6 +223,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_faceproc2 \
     libmmosal_proprietary \
     libpdmapper \
+    libpdnotifier \
     libperfgluelayer \
     libqcci_legacy \
     libqdi \
@@ -291,11 +292,24 @@ PRODUCT_PACKAGES += \
     libqcreverb \
     libqcvirt \
     libvolumelistener \
+    vendor.display.color@1.0_vendor \
+    vendor.display.postproc@1.0_vendor \
+    vendor.qti.hardware.data.latency@1.0_vendor \
     vendor.qti.hardware.fm@1.0_vendor \
     vendor.qti.hardware.perf@1.0_vendor \
+    vendor.qti.hardware.qteeconnector@1.0 \
+    vendor.qti.hardware.radio.am@1.0_vendor \
+    vendor.qti.hardware.radio.ims@1.0_vendor \
+    vendor.qti.hardware.radio.lpa@1.0_vendor \
+    vendor.qti.hardware.radio.qcrilhook@1.0_vendor \
+    vendor.qti.hardware.radio.qtiradio@1.0_vendor \
+    vendor.qti.hardware.radio.uim@1.0_vendor \
+    vendor.qti.hardware.radio.uim_remote_client@1.0_vendor \
     vendor.qti.hardware.radio.uim_remote_server@1.0_vendor \
     vendor.qti.hardware.tui_comm@1.0_vendor \
+    vendor.qti.imsrtpservice@1.0-service-Impl \
     vendor.qti.imsrtpservice@1.0_vendor \
+    libq3dtools_esx \
     android.hardware.drm@1.0-impl \
     camera.sdm660 \
     libOmxVideoDSMode \
@@ -309,6 +323,7 @@ PRODUCT_PACKAGES += \
     libarcsoft_dualcam_refocus \
     libarcsoft_low_light_shot \
     libcamera_imgproc \
+    libchromaflash \
     libdepthmapwrapper \
     libdrc \
     libflash_pmic \
@@ -316,6 +331,7 @@ PRODUCT_PACKAGES += \
     libjpegdhw \
     libjpegdmahw \
     libjpegehw \
+    libllvd_smore \
     libmm-qcamera \
     libmmcamera2_aec_module \
     libmmcamera2_c2d_module \
@@ -335,13 +351,16 @@ PRODUCT_PACKAGES += \
     libmmcamera2_stats_lib \
     libmmcamera2_stats_modules \
     libmmcamera2_tct_vis_module \
+    libmmcamera_chromaflash_lib \
     libmmcamera_csidtg \
     libmmcamera_depth_map \
     libmmcamera_dummyalgo \
+    libmmcamera_edgesmooth_lib \
     libmmcamera_eebinparse \
     libmmcamera_eeprom_util \
     libmmcamera_eztune_module \
     libmmcamera_facedetection_lib \
+    libmmcamera_hdr_gb_lib \
     libmmcamera_hvx_add_constant \
     libmmcamera_hvx_grid_sum \
     libmmcamera_imglib \
@@ -391,16 +410,21 @@ PRODUCT_PACKAGES += \
     libmmcamera_isp_sce40 \
     libmmcamera_isp_snr47 \
     libmmcamera_isp_sub_module \
+    libmmcamera_llvd \
+    libmmcamera_nighthawk \
+    libmmcamera_optizoom_lib \
     libmmcamera_paaf_lib \
     libmmcamera_pdaf \
     libmmcamera_pdafcamif \
     libmmcamera_ppbase_module \
     libmmcamera_ppeiscore \
     libmmcamera_quadracfa \
+    libmmcamera_stillmore_lib \
     libmmcamera_sw2d_lib \
     libmmcamera_thread_services \
     libmmcamera_tintless_algo \
     libmmcamera_tintless_bg_pca_algo \
+    libmmcamera_trueportrait_lib \
     libmmcamera_tuning \
     libmmcamera_tuning_lookup \
     libmmjpeg \
@@ -410,6 +434,7 @@ PRODUCT_PACKAGES += \
     libmmqjpegdma \
     libmpbase \
     libopencv_java3 \
+    liboptizoom \
     libqomx_core \
     libqomx_jpegdec \
     libqomx_jpegenc \
@@ -417,9 +442,12 @@ PRODUCT_PACKAGES += \
     libremosaic_daemon \
     libsmwrapper \
     libsurround_3mic_proc \
+    libtrueportrait_vendor \
     libvqzip \
     libwvhidl \
-    com.qualcomm.qti.dpm.api@1.0_vendor \
+    android.hardware.radio.config@1.0_vendor \
+    android.hardware.radio.deprecated@1.0_vendor \
+    android.hardware.secure_element@1.0_vendor \
     com.qualcomm.qti.imscmservice@2.0 \
     com.qualcomm.qti.imscmservice@2.1 \
     com.qualcomm.qti.imscmservice@2.2 \
@@ -427,6 +455,10 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.uceservice@2.1 \
     com.qualcomm.qti.uceservice@2.2 \
     com.qualcomm.qti.uceservice@2.3 \
+    com.quicinc.cne.api@1.1 \
+    com.quicinc.cne.constants@2.1 \
+    com.quicinc.cne.server@2.1 \
+    com.quicinc.cne.server@2.2 \
     vendor.qti.gnss@4.0-impl \
     vendor.qti.hardware.qccvndhal@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-impl \
@@ -461,7 +493,9 @@ PRODUCT_PACKAGES += \
     libgdtap \
     liblbs_core \
     libloc_api_v02 \
+    libloc_pla \
     libloc_socket \
+    libloc_stub \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
@@ -486,6 +520,7 @@ PRODUCT_PACKAGES += \
     libsettings \
     libsystem_health_mon \
     libthermalioctl \
+    libtrueportrait \
     libwms \
     libwqe \
     libxml \
@@ -499,6 +534,7 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.1 \
     vendor.display.color@1.2 \
     vendor.display.postproc@1.0 \
+    vendor.qti.data.factory@1.0 \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.1 \
     vendor.qti.data.factory@2.2 \
@@ -527,8 +563,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qccsyshal@1.0_vendor \
     vendor.qti.hardware.qccvndhal@1.0-halimpl \
     vendor.qti.hardware.qccvndhal@1.0_vendor \
-    vendor.qti.hardware.qteeconnector@1.0 \
-    vendor.qti.hardware.radio.am@1.0 \
     vendor.qti.hardware.radio.ims@1.0 \
     vendor.qti.hardware.radio.ims@1.1 \
     vendor.qti.hardware.radio.ims@1.2 \
@@ -652,6 +686,7 @@ PRODUCT_PACKAGES += \
     qseecomd \
     qti \
     rmt_storage \
+    sensors.qti \
     tftp_server \
     thermal-engine \
     time_daemon \
@@ -666,6 +701,7 @@ PRODUCT_PACKAGES += \
     vendor_lib_libEGL_adreno_so \
     vendor_lib_libGLESv2_adreno_so \
     vendor_lib_libq3dtools_adreno_so \
+    vendor_lib_libq3dtools_esx_so \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so

@@ -87,99 +87,10 @@ LensInfo : Information of the lens present in the module.
 -->
 
 <CameraConfigurationRoot>
-  <CameraModuleConfig>
-    <CameraId>0</CameraId>
-    <SensorName>s5k2l8_athena</SensorName>
-    <!--EepromName>qtech_s5k2l9_athena</EepromName-->
-    <ActuatorName>ak7374_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
-    <ChromatixName>s5k2l8_athena_chromatix</ChromatixName>
-    <ModesSupported>1</ModesSupported>
-    <Position>BACK</Position>
-    <MountAngle>360</MountAngle>
-    <CSIInfo>
-      <CSIDCore>0</CSIDCore>
-      <LaneMask>0x1F</LaneMask>
-      <LaneAssign>0x4320</LaneAssign>
-      <ComboMode>0</ComboMode>
-    </CSIInfo>
-    <LensInfo>
-      <FocalLength>3.95</FocalLength>
-      <FNumber>1.8</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>65.8</HorizontalViewAngle>
-      <VerticalViewAngle>51.8</VerticalViewAngle>
-      <MinFocusDistance>0.08</MinFocusDistance>
-      <MaxRollDegree>1.0</MaxRollDegree>
-      <MaxPitchDegree>1.0</MaxPitchDegree>
-      <MaxYawDegree>1.0</MaxYawDegree>
-    </LensInfo>
-  </CameraModuleConfig>
-
     <CameraModuleConfig>
     <CameraId>0</CameraId>
-    <SensorName>s5k2l9_qtech_athena</SensorName>
-    <EepromName>qtech_s5k2l9_athena</EepromName>
-    <ActuatorName>ak7374_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
-    <ChromatixName>s5k2l9_qtech_athena_chromatix</ChromatixName>
-    <ModesSupported>1</ModesSupported>
-    <Position>BACK</Position>
-    <MountAngle>360</MountAngle>
-    <CSIInfo>
-      <CSIDCore>0</CSIDCore>
-      <LaneMask>0x1F</LaneMask>
-      <LaneAssign>0x4320</LaneAssign>
-      <ComboMode>0</ComboMode>
-    </CSIInfo>
-    <LensInfo>
-      <FocalLength>3.89</FocalLength>
-      <FNumber>1.8</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>66.5</HorizontalViewAngle>
-      <VerticalViewAngle>52.3</VerticalViewAngle>
-      <MinFocusDistance>0.08</MinFocusDistance>
-      <MaxRollDegree>1.0</MaxRollDegree>
-      <MaxPitchDegree>1.0</MaxPitchDegree>
-      <MaxYawDegree>1.0</MaxYawDegree>
-    </LensInfo>
-  </CameraModuleConfig>
-
-  <CameraModuleConfig>
-    <CameraId>0</CameraId>
-    <SensorName>s5k2l9_sunny_athena</SensorName>
-    <EepromName>sunny_s5k2l9_athena</EepromName>
-    <ActuatorName>ak7374_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
-    <ChromatixName>s5k2l9_sunny_athena_chromatix</ChromatixName>
-    <ModesSupported>1</ModesSupported>
-    <Position>BACK</Position>
-    <MountAngle>360</MountAngle>
-    <CSIInfo>
-      <CSIDCore>0</CSIDCore>
-      <LaneMask>0x1F</LaneMask>
-      <LaneAssign>0x4320</LaneAssign>
-      <ComboMode>0</ComboMode>
-    </CSIInfo>
-    <LensInfo>
-      <FocalLength>3.89</FocalLength>
-      <FNumber>1.8</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>66.5</HorizontalViewAngle>
-      <VerticalViewAngle>52.3</VerticalViewAngle>
-      <MinFocusDistance>0.08</MinFocusDistance>
-      <MaxRollDegree>1.0</MaxRollDegree>
-      <MaxPitchDegree>1.0</MaxPitchDegree>
-      <MaxYawDegree>1.0</MaxYawDegree>
-    </LensInfo>
-  </CameraModuleConfig>
-
-  <CameraModuleConfig>
-    <CameraId>0</CameraId>
     <SensorName>s5k2l9_athena</SensorName>
-    <EepromName>qtech_s5k2l9_athena</EepromName>
-    <ActuatorName>ak7374_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
+    <!--<ActuatorName>ak7371</ActuatorName>-->
     <ChromatixName>s5k2l9_athena_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>BACK</Position>
@@ -191,82 +102,21 @@ LensInfo : Information of the lens present in the module.
       <ComboMode>0</ComboMode>
     </CSIInfo>
     <LensInfo>
-      <FocalLength>3.89</FocalLength>
-      <FNumber>1.8</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>66.5</HorizontalViewAngle>
-      <VerticalViewAngle>52.3</VerticalViewAngle>
-      <MinFocusDistance>0.08</MinFocusDistance>
-      <MaxRollDegree>1.0</MaxRollDegree>
-      <MaxPitchDegree>1.0</MaxPitchDegree>
-      <MaxYawDegree>1.0</MaxYawDegree>
-    </LensInfo>
- </CameraModuleConfig>
-
-  <CameraModuleConfig>
-    <CameraId>2</CameraId>
-    <SensorName>s5k3m3_qtech_athena</SensorName>
-    <EepromName>qtech_s5k3m3_athena</EepromName>
-    <ActuatorName>bu64297gwz_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
-    <ChromatixName>s5k3m3_qtech_athena_chromatix</ChromatixName>
-    <ModesSupported>1</ModesSupported>
-    <Position>BACK_AUX</Position>
-    <MountAngle>360</MountAngle>
-    <CSIInfo>
-      <CSIDCore>2</CSIDCore>
-      <LaneMask>0x1F</LaneMask>
-      <LaneAssign>0x4320</LaneAssign>
-      <ComboMode>0</ComboMode>
-    </CSIInfo>
-    <LensInfo>
-      <FocalLength>5.51</FocalLength>
-      <FNumber>2.6</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>41.3</HorizontalViewAngle>
-      <VerticalViewAngle>31.5</VerticalViewAngle>
-      <MinFocusDistance>0.5</MinFocusDistance>
+      <FocalLength>4.28</FocalLength>
+      <FNumber>1.75</FNumber>
+      <TotalFocusDistance>0.10</TotalFocusDistance>
+      <HorizontalViewAngle>66.0</HorizontalViewAngle>
+      <VerticalViewAngle>52.0</VerticalViewAngle>
+      <MinFocusDistance>0.10</MinFocusDistance>
       <MaxRollDegree>1.0</MaxRollDegree>
       <MaxPitchDegree>1.0</MaxPitchDegree>
       <MaxYawDegree>1.0</MaxYawDegree>
     </LensInfo>
   </CameraModuleConfig>
-
-  <CameraModuleConfig>
-    <CameraId>2</CameraId>
-    <SensorName>s5k3m3_sunny_athena</SensorName>
-    <EepromName>sunny_s5k3m3_athena</EepromName>
-    <ActuatorName>bu64297gwz_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
-    <ChromatixName>s5k3m3_sunny_athena_chromatix</ChromatixName>
-    <ModesSupported>1</ModesSupported>
-    <Position>BACK_AUX</Position>
-    <MountAngle>360</MountAngle>
-    <CSIInfo>
-      <CSIDCore>2</CSIDCore>
-      <LaneMask>0x1F</LaneMask>
-      <LaneAssign>0x4320</LaneAssign>
-      <ComboMode>0</ComboMode>
-    </CSIInfo>
-    <LensInfo>
-      <FocalLength>5.51</FocalLength>
-      <FNumber>2.6</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>41.3</HorizontalViewAngle>
-      <VerticalViewAngle>31.5</VerticalViewAngle>
-      <MinFocusDistance>0.5</MinFocusDistance>
-      <MaxRollDegree>1.0</MaxRollDegree>
-      <MaxPitchDegree>1.0</MaxPitchDegree>
-      <MaxYawDegree>1.0</MaxYawDegree>
-    </LensInfo>
-  </CameraModuleConfig>
-
   <CameraModuleConfig>
     <CameraId>2</CameraId>
     <SensorName>s5k3m3_athena</SensorName>
-    <EepromName>qtech_s5k3m3_athena</EepromName>
-    <ActuatorName>bu64297gwz_athena</ActuatorName>
-    <FlashName>pmic</FlashName>
+     <!--<ActuatorName>bu64297gwz</ActuatorName>-->
     <ChromatixName>s5k3m3_athena_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>BACK_AUX</Position>
@@ -278,12 +128,12 @@ LensInfo : Information of the lens present in the module.
       <ComboMode>0</ComboMode>
     </CSIInfo>
     <LensInfo>
-      <FocalLength>5.51</FocalLength>
+      <FocalLength>6.0</FocalLength>
       <FNumber>2.6</FNumber>
-      <TotalFocusDistance>5.0</TotalFocusDistance>
-      <HorizontalViewAngle>41.3</HorizontalViewAngle>
-      <VerticalViewAngle>31.5</VerticalViewAngle>
-      <MinFocusDistance>0.5</MinFocusDistance>
+      <TotalFocusDistance>0.15</TotalFocusDistance>
+      <HorizontalViewAngle>38.8</HorizontalViewAngle>
+      <VerticalViewAngle>29.5</VerticalViewAngle>
+      <MinFocusDistance>0.15</MinFocusDistance>
       <MaxRollDegree>1.0</MaxRollDegree>
       <MaxPitchDegree>1.0</MaxPitchDegree>
       <MaxYawDegree>1.0</MaxYawDegree>
@@ -293,7 +143,7 @@ LensInfo : Information of the lens present in the module.
   <CameraModuleConfig>
     <CameraId>1</CameraId>
     <SensorName>s5k4h7_athena</SensorName>
-    <EepromName>sunny_a8s02c_s5k4h7</EepromName>
+    <!--<EepromName>truly_cmb433</EepromName>-->
     <ChromatixName>s5k4h7_athena_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>FRONT</Position>
@@ -307,9 +157,9 @@ LensInfo : Information of the lens present in the module.
     <LensInfo>
       <FocalLength>2.48</FocalLength>
       <FNumber>2.0</FNumber>
-      <TotalFocusDistance>0.666</TotalFocusDistance>
-      <HorizontalViewAngle>71.3</HorizontalViewAngle>
-      <VerticalViewAngle>56.5</VerticalViewAngle>
+      <TotalFocusDistance>0.45</TotalFocusDistance>
+      <HorizontalViewAngle>68.0</HorizontalViewAngle>
+      <VerticalViewAngle>51.0</VerticalViewAngle>
       <MinFocusDistance>0.34</MinFocusDistance>
     </LensInfo>
   </CameraModuleConfig>

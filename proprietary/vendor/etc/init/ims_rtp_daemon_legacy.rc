@@ -4,10 +4,12 @@
 #
 
 # imsdatadaemon starts with root and UID will be downgraded to RADIO.
-service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-    class main
-    user system
-    group radio vendor_qti_diag inet log
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
+#service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
+#    class main
+#    user system
+# --- by krab
+#    group system
+#    group radio vendor_qti_diag inet log
+#on property:vendor.ims.DATA_DAEMON_STATUS=1
+#    restart vendor.ims_rtp_daemon
+# --- end krab
