@@ -427,6 +427,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_trueportrait_lib \
     libmmcamera_tuning \
     libmmcamera_tuning_lookup \
+    libmmcamera_ubifocus_lib \
     libmmjpeg \
     libmmjpeg_interface \
     libmmlib2d_interface \
@@ -440,9 +441,11 @@ PRODUCT_PACKAGES += \
     libqomx_jpegenc \
     libqomx_jpegenc_pipe \
     libremosaic_daemon \
+    libseemore \
     libsmwrapper \
     libsurround_3mic_proc \
     libtrueportrait_vendor \
+    libubifocus \
     libvqzip \
     libwvhidl \
     android.hardware.radio.config@1.0_vendor \

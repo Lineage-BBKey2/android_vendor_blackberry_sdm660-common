@@ -2586,6 +2586,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libion",
                 "libOpenCL",
                 "libc++",
                 "libc",
@@ -2599,6 +2600,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libion",
                 "libOpenCL",
                 "libc++",
                 "libc",
@@ -6170,6 +6172,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "liblog",
                 "libc++",
+                "libclang_rt.ubsan_standalone",
                 "libc",
                 "libm",
                 "libdl",
@@ -10638,6 +10641,25 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libmmcamera_ubifocus_lib",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libmmcamera_ubifocus_lib.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libmmjpeg",
     owner: "blackberry",
     strip: {
@@ -10975,6 +10997,25 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libseemore",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libseemore.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libsmwrapper",
     owner: "blackberry",
     strip: {
@@ -11034,6 +11075,25 @@ cc_prebuilt_library_shared {
         android_arm: {
             srcs: [
                 "proprietary/vendor/lib/libtrueportrait_vendor.so",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libubifocus",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libubifocus.so",
             ],
         },
     },
