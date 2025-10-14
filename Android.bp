@@ -9,6 +9,7 @@ soong_namespace {
         "hardware/qcom-caf/wlan",
         "vendor/qcom/opensource/dataservices",
         "vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um",
+        "hardware/qcom/gps/msm8998",
     ],
 }
 
@@ -3342,118 +3343,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmmcamera_dbg",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_dbg.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmmcamera_dbg.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_faceproc",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_faceproc.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libdl",
-                "libc",
-                "libm",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmmcamera_faceproc.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libdl",
-                "libc",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_faceproc2",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_faceproc2.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libdl",
-                "libc",
-                "libm",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmmcamera_faceproc2.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libdl",
-                "libc",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmmosal_proprietary",
     owner: "blackberry",
     strip: {
@@ -4741,35 +4630,15 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libscveFaceLandmarks.so",
             ],
-            shared_libs: [
-                "libscveFaceLandmarks_stub",
-                "liblog",
-                "libfastcvopt",
-                "libscveCommon",
-                "libmmcamera_faceproc",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libscveFaceLandmarks.so",
             ],
-            shared_libs: [
-                "libscveFaceLandmarks_stub",
-                "liblog",
-                "libfastcvopt",
-                "libscveCommon",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -4828,34 +4697,15 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libscveFaceRecognition.so",
             ],
-            shared_libs: [
-                "libmmcamera_faceproc2",
-                "liblog",
-                "libfastcvopt",
-                "libscveCommon",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libscveFaceRecognition.so",
             ],
-            shared_libs: [
-                "libmmcamera_faceproc2",
-                "liblog",
-                "libfastcvopt",
-                "libscveCommon",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6186,6 +6036,217 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libbundlewrapper",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libbundlewrapper.so",
+            ],
+            shared_libs: [
+                "libaudioutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libbundlewrapper.so",
+            ],
+            shared_libs: [
+                "libaudioutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdownmix",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libdownmix.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libdownmix.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdynproc",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libdynproc.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libdynproc.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libeffectproxy",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libeffectproxy.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libeffects",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libeffectproxy.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libeffects",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libldnhncr",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libldnhncr.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libldnhncr.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqcbassboost",
     owner: "blackberry",
     strip: {
@@ -6417,6 +6478,90 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libreverbwrapper",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libreverbwrapper.so",
+            ],
+            shared_libs: [
+                "libaudioutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libreverbwrapper.so",
+            ],
+            shared_libs: [
+                "libaudioutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libvisualizer",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libvisualizer.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libvisualizer.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libclang_rt.ubsan_standalone",
                 "libc",
                 "libm",
                 "libdl",
@@ -7542,20 +7687,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libadsp_hvx_callback_skel.so",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libcdsprpc",
-                "libadsp_hvx_stub",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -7571,19 +7706,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libadsp_hvx_stub.so",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libcdsprpc",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -7863,573 +7989,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmm-qcamera",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmm-qcamera.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_interface",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_aec_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_aec_module.so",
-            ],
-            shared_libs: [
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_c2d_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_c2d_module.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera2_pp_buf_mgr",
-                "libmmcamera_dbg",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_cpp_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_cpp_module.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera2_pp_buf_mgr",
-                "libmmcamera_dbg",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_frame_algorithm",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_frame_algorithm.so",
-            ],
-            shared_libs: [
-                "libmmcamera_dbg",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_iface_modules",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_iface_modules.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera2_isp_modules",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_imglib_modules",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_imglib_modules.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_imglib",
-                "libmmcamera_dbg",
-                "libcdsprpc",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_is",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_is.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_isp_modules",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_isp_modules.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_dbg",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_mct",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_mct.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_mct_shimlayer",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_mct_shimlayer.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera2_stats_modules",
-                "libmmcamera2_iface_modules",
-                "libmmcamera2_isp_modules",
-                "libmmcamera2_sensor_modules",
-                "libmmcamera2_pproc_modules",
-                "libmmcamera2_imglib_modules",
-                "libmmcamera_thread_services",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_pp_buf_mgr",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_pp_buf_mgr.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_dbg",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_pproc_modules",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_pproc_modules.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libmmcamera2_cpp_module",
-                "libmmcamera2_mct",
-                "libmmcamera2_imglib_modules",
-                "libmmcamera_ppbase_module",
-                "libmmcamera_eztune_module",
-                "libmmcamera2_c2d_module",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_q3a_core",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_q3a_core.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_stats_algorithm",
-                "libmmcamera2_stats_lib",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_sensor_modules",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_sensor_modules.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libz",
-                "libxml2",
-                "libmmcamera_dbg",
-                "liblog",
-                "libmmcamera_pdaf",
-                "libmmcamera_pdafcamif",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_stats_algorithm",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_stats_algorithm.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_stats_lib",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_stats_lib.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_stats_modules",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_stats_modules.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera2_stats_lib",
-                "libmmcamera2_stats_algorithm",
-                "libxml2",
-                "libutils",
-                "libmmcamera_dbg",
-                "libhidlbase",
-                "libhidltransport",
-                "android.frameworks.sensorservice@1.0",
-                "libmmcamera2_is",
-                "libsensor1",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera2_tct_vis_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera2_tct_vis_module.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_pp_buf_mgr",
-                "liblog",
-                "libutils",
-                "libmmcamera2_mct",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmmcamera_chromaflash_lib",
     owner: "blackberry",
     strip: {
@@ -8449,89 +8008,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmmcamera_csidtg",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_csidtg.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_depth_map",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_depth_map.so",
-            ],
-            shared_libs: [
-                "libdepthmapwrapper",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_dummyalgo",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_dummyalgo.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_imglib",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmmcamera_edgesmooth_lib",
     owner: "blackberry",
     strip: {
@@ -8541,1641 +8017,6 @@ cc_prebuilt_library_shared {
         android_arm: {
             srcs: [
                 "proprietary/vendor/lib/libmmcamera_edgesmooth_lib.so",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_eebinparse",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_eebinparse.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_eeprom_util",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_eeprom_util.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_eztune_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_eztune_module.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_ppbase_module",
-                "libmmcamera_dbg",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_facedetection_lib",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_facedetection_lib.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_hdr_gb_lib",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_hdr_gb_lib.so",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_hvx_add_constant",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_hvx_add_constant.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_hvx_grid_sum",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_hvx_grid_sum.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_imglib",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_imglib.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libcdsprpc",
-                "libfastcvopt",
-                "libfastcvopt",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_imglib_faceproc_adspstub",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_imglib_faceproc_adspstub.so",
-            ],
-            shared_libs: [
-                "libcdsprpc",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_interface",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_interface.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libhal_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_abf48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_abf48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_aec_bg_stats47",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_aec_bg_stats47.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_bf_stats47",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_bf_stats47.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_bg_stats46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_bg_stats46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_bhist_stats44",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_bhist_stats44.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_black_level48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_black_level48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_bpc48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_bpc48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_cac47",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_cac47.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_chroma_enhan40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_chroma_enhan40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_chroma_suppress40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_chroma_suppress40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_clamp_encoder40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_clamp_encoder40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_clamp_video40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_clamp_video40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_clamp_viewfinder40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_clamp_viewfinder40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_color_correct46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_color_correct46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_color_xform_encoder46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_color_xform_encoder46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_color_xform_video46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_color_xform_video46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_color_xform_viewfinder46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_color_xform_viewfinder46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_cs_stats46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_cs_stats46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_demosaic48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_demosaic48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_demux48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_demux48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_fovcrop_encoder46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_fovcrop_encoder46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_fovcrop_video46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_fovcrop_video46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_fovcrop_viewfinder46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_fovcrop_viewfinder46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_gamma44",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_gamma44.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_gic48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_gic48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_gtm46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_gtm46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_hdr48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_hdr48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_hdr_be_stats46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_hdr_be_stats46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_hdr_bhist_stats44",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_hdr_bhist_stats44.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_ihist_stats46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_ihist_stats46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_linearization40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_linearization40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_ltm47",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_ltm47.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_luma_adaptation40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_luma_adaptation40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_mce40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_mce40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_mesh_rolloff44",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_mesh_rolloff44.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_pdaf48",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_pdaf48.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_pedestal_correct46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_pedestal_correct46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_rs_stats46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_rs_stats46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_scaler_encoder46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_scaler_encoder46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_scaler_video46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_scaler_video46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_scaler_viewfinder46",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_scaler_viewfinder46.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_sce40",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_sce40.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_snr47",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_snr47.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_isp_sub_module",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_isp_sub_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_isp_sub_module.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_dbg",
-                "libmmcamera2_isp_modules",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
             ],
         },
     },
@@ -10243,185 +8084,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmmcamera_paaf_lib",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_paaf_lib.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libmmcamera2_frame_algorithm",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_pdaf",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_pdaf.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_pdafcamif",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_pdafcamif.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_ppbase_module",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_ppbase_module.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libmmcamera2_mct",
-                "libmmcamera_dbg",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_ppeiscore",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_ppeiscore.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libGLESv2_adreno",
-                "libEGL",
-                "libGLESv2",
-                "libhardware",
-                "libqdMetaData",
-                "libutils",
-                "libmmcamera_dbg",
-                "libmmcamera_imglib",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_quadracfa",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_quadracfa.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libremosaic_daemon",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmmcamera_stillmore_lib",
     owner: "blackberry",
     strip: {
@@ -10431,120 +8093,6 @@ cc_prebuilt_library_shared {
         android_arm: {
             srcs: [
                 "proprietary/vendor/lib/libmmcamera_stillmore_lib.so",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_sw2d_lib",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_sw2d_lib.so",
-            ],
-            shared_libs: [
-                "libmmcamera_imglib",
-                "libmmcamera_dbg",
-                "libcutils",
-                "liblog",
-                "libfastcvopt",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_thread_services",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_thread_services.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_tintless_algo",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_tintless_algo.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_tintless_bg_pca_algo",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_tintless_bg_pca_algo.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
             ],
         },
     },
@@ -10574,73 +8122,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmmcamera_tuning",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_tuning.so",
-            ],
-            shared_libs: [
-                "libmmcamera_tuning_lookup",
-                "libmmcamera2_mct",
-                "libmmcamera2_stats_modules",
-                "libmmcamera2_iface_modules",
-                "libmmcamera2_isp_modules",
-                "libmmcamera2_sensor_modules",
-                "libmmcamera2_pproc_modules",
-                "libmmcamera2_imglib_modules",
-                "libmmcamera_eztune_module",
-                "libmm-qcamera",
-                "liblog",
-                "libcutils",
-                "libfastcvopt",
-                "libmmcamera_dbg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmcamera_tuning_lookup",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmcamera_tuning_lookup.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libfastcvopt",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmmcamera_ubifocus_lib",
     owner: "blackberry",
     strip: {
@@ -10655,168 +8136,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "32",
     check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmjpeg",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmjpeg.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libfastcvopt",
-                "liblog",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmjpeg_interface",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmjpeg_interface.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libqomx_core",
-                "libmmcamera_interface",
-                "libmmlib2d_interface",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmlib2d_interface",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmlib2d_interface.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_interface",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmqjpeg_codec",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmqjpeg_codec.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmjpeg",
-                "libmmqjpegdma",
-                "libfastcvopt",
-                "libcrypto",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmmqjpegdma",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmmqjpegdma.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libmpbase",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libmpbase.so",
-            ],
-            shared_libs: [
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
@@ -10870,17 +8189,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libqomx_core.so",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -10896,19 +8208,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libqomx_jpegdec.so",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmqjpeg_codec",
-                "libmmjpeg",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -10924,19 +8227,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libqomx_jpegenc.so",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmjpeg",
-                "libmmqjpeg_codec",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -10952,20 +8246,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libqomx_jpegenc_pipe.so",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmqjpeg_codec",
-                "libmmjpeg",
-                "libmmqjpegdma",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -12512,25 +9796,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libloc_pla",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libloc_pla.so",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libloc_socket",
     owner: "blackberry",
     strip: {
@@ -12540,25 +9805,6 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libloc_socket.so",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libloc_stub",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libloc_stub.so",
             ],
         },
     },
@@ -16428,18 +13674,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "ims",
-    owner: "blackberry",
-    apk: "proprietary/system_ext/priv-app/ims/ims.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    system_ext_specific: true,
-}
-
-android_app_import {
     name: "qcrilmsgtunnel",
     owner: "blackberry",
     apk: "proprietary/system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk",
@@ -17297,18 +14531,10 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/mm-qcamera-app",
             ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libmmcamera_interface",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     strip: {
         none: true,
     },

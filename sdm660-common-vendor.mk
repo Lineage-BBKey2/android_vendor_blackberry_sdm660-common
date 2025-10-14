@@ -13,7 +13,6 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/acdbdata/adsp_avs_config.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/adsp_avs_config.acdb \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cacert_location.pem:$(TARGET_COPY_OUT_VENDOR)/etc/cacert_location.pem \
-    vendor/blackberry/sdm660-common/proprietary/vendor/etc/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cne/mwqem.conf:$(TARGET_COPY_OUT_VENDOR)/etc/cne/mwqem.conf \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cne/profileMwqem.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/profileMwqem.xml \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile1.xml \
@@ -218,9 +217,6 @@ PRODUCT_PACKAGES += \
     libllvm-qgl \
     libmdmdetect \
     libmdsprpc \
-    libmmcamera_dbg \
-    libmmcamera_faceproc \
-    libmmcamera_faceproc2 \
     libmmosal_proprietary \
     libpdmapper \
     libpdnotifier \
@@ -285,12 +281,19 @@ PRODUCT_PACKAGES += \
     sensors.ssc \
     libasphere \
     libaudiopreprocessing \
+    libbundlewrapper \
+    libdownmix \
+    libdynproc \
+    libeffectproxy \
+    libldnhncr \
     libqcbassboost \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcreverb \
     libqcvirt \
+    libreverbwrapper \
+    libvisualizer \
     libvolumelistener \
     vendor.display.color@1.0_vendor \
     vendor.display.postproc@1.0_vendor \
@@ -332,108 +335,14 @@ PRODUCT_PACKAGES += \
     libjpegdmahw \
     libjpegehw \
     libllvd_smore \
-    libmm-qcamera \
-    libmmcamera2_aec_module \
-    libmmcamera2_c2d_module \
-    libmmcamera2_cpp_module \
-    libmmcamera2_frame_algorithm \
-    libmmcamera2_iface_modules \
-    libmmcamera2_imglib_modules \
-    libmmcamera2_is \
-    libmmcamera2_isp_modules \
-    libmmcamera2_mct \
-    libmmcamera2_mct_shimlayer \
-    libmmcamera2_pp_buf_mgr \
-    libmmcamera2_pproc_modules \
-    libmmcamera2_q3a_core \
-    libmmcamera2_sensor_modules \
-    libmmcamera2_stats_algorithm \
-    libmmcamera2_stats_lib \
-    libmmcamera2_stats_modules \
-    libmmcamera2_tct_vis_module \
     libmmcamera_chromaflash_lib \
-    libmmcamera_csidtg \
-    libmmcamera_depth_map \
-    libmmcamera_dummyalgo \
     libmmcamera_edgesmooth_lib \
-    libmmcamera_eebinparse \
-    libmmcamera_eeprom_util \
-    libmmcamera_eztune_module \
-    libmmcamera_facedetection_lib \
-    libmmcamera_hdr_gb_lib \
-    libmmcamera_hvx_add_constant \
-    libmmcamera_hvx_grid_sum \
-    libmmcamera_imglib \
-    libmmcamera_imglib_faceproc_adspstub \
-    libmmcamera_interface \
-    libmmcamera_isp_abf48 \
-    libmmcamera_isp_aec_bg_stats47 \
-    libmmcamera_isp_bf_stats47 \
-    libmmcamera_isp_bg_stats46 \
-    libmmcamera_isp_bhist_stats44 \
-    libmmcamera_isp_black_level48 \
-    libmmcamera_isp_bpc48 \
-    libmmcamera_isp_cac47 \
-    libmmcamera_isp_chroma_enhan40 \
-    libmmcamera_isp_chroma_suppress40 \
-    libmmcamera_isp_clamp_encoder40 \
-    libmmcamera_isp_clamp_video40 \
-    libmmcamera_isp_clamp_viewfinder40 \
-    libmmcamera_isp_color_correct46 \
-    libmmcamera_isp_color_xform_encoder46 \
-    libmmcamera_isp_color_xform_video46 \
-    libmmcamera_isp_color_xform_viewfinder46 \
-    libmmcamera_isp_cs_stats46 \
-    libmmcamera_isp_demosaic48 \
-    libmmcamera_isp_demux48 \
-    libmmcamera_isp_fovcrop_encoder46 \
-    libmmcamera_isp_fovcrop_video46 \
-    libmmcamera_isp_fovcrop_viewfinder46 \
-    libmmcamera_isp_gamma44 \
-    libmmcamera_isp_gic48 \
-    libmmcamera_isp_gtm46 \
-    libmmcamera_isp_hdr48 \
-    libmmcamera_isp_hdr_be_stats46 \
-    libmmcamera_isp_hdr_bhist_stats44 \
-    libmmcamera_isp_ihist_stats46 \
-    libmmcamera_isp_linearization40 \
-    libmmcamera_isp_ltm47 \
-    libmmcamera_isp_luma_adaptation40 \
-    libmmcamera_isp_mce40 \
-    libmmcamera_isp_mesh_rolloff44 \
-    libmmcamera_isp_pdaf48 \
-    libmmcamera_isp_pedestal_correct46 \
-    libmmcamera_isp_rs_stats46 \
-    libmmcamera_isp_scaler_encoder46 \
-    libmmcamera_isp_scaler_video46 \
-    libmmcamera_isp_scaler_viewfinder46 \
-    libmmcamera_isp_sce40 \
-    libmmcamera_isp_snr47 \
-    libmmcamera_isp_sub_module \
     libmmcamera_llvd \
     libmmcamera_nighthawk \
     libmmcamera_optizoom_lib \
-    libmmcamera_paaf_lib \
-    libmmcamera_pdaf \
-    libmmcamera_pdafcamif \
-    libmmcamera_ppbase_module \
-    libmmcamera_ppeiscore \
-    libmmcamera_quadracfa \
     libmmcamera_stillmore_lib \
-    libmmcamera_sw2d_lib \
-    libmmcamera_thread_services \
-    libmmcamera_tintless_algo \
-    libmmcamera_tintless_bg_pca_algo \
     libmmcamera_trueportrait_lib \
-    libmmcamera_tuning \
-    libmmcamera_tuning_lookup \
     libmmcamera_ubifocus_lib \
-    libmmjpeg \
-    libmmjpeg_interface \
-    libmmlib2d_interface \
-    libmmqjpeg_codec \
-    libmmqjpegdma \
-    libmpbase \
     libopencv_java3 \
     liboptizoom \
     libqomx_core \
@@ -496,9 +405,7 @@ PRODUCT_PACKAGES += \
     libgdtap \
     liblbs_core \
     libloc_api_v02 \
-    libloc_pla \
     libloc_socket \
-    libloc_stub \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
@@ -644,7 +551,6 @@ PRODUCT_PACKAGES += \
     TimeService \
     QtiTelephonyService \
     dpmserviceapp \
-    ims \
     qcrilmsgtunnel \
     com.qti.dpmframework \
     dpmapi \
