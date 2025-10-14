@@ -221,6 +221,7 @@ PRODUCT_PACKAGES += \
     libpdmapper \
     libpdnotifier \
     libperfgluelayer \
+    libperipheral_client \
     libqcci_legacy \
     libqdi \
     libqdp \
@@ -416,7 +417,6 @@ PRODUCT_PACKAGES += \
     libnetmgr_nr_fusion \
     libnetmgr_rmnet_ext \
     libnlnetmgr \
-    libperipheral_client \
     libqcc_file_agent \
     libqcmaputils \
     libqcrilFramework \
