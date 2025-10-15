@@ -561,6 +561,7 @@ PRODUCT_PACKAGES += \
     audioflacapp \
     cnd \
     cnss-daemon \
+    cnss_diag \
     dpmQmiMgr \
     energy-awareness \
     hvdcp_opti \
