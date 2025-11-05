@@ -228,6 +228,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -246,6 +247,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -376,6 +378,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/com.quicinc.cne.api@1.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "com.quicinc.cne.constants@1.0",
                 "libhidlbase",
                 "libhidltransport",
@@ -394,6 +397,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/com.quicinc.cne.api@1.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "com.quicinc.cne.constants@1.0",
                 "libhidlbase",
                 "libhidltransport",
@@ -2147,15 +2151,40 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libbt-hidlclient.so",
             ],
+            shared_libs: [
+                "libutils",
+                "libhidlbase",
+                "libhidltransport",
+                "android.hardware.bluetooth@1.0",
+                "com.qualcomm.qti.ant@1.0",
+                "vendor.qti.hardware.fm@1.0_vendor",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libbt-hidlclient.so",
             ],
+            shared_libs: [
+                "libutils",
+                "libhidlbase",
+                "libhidltransport",
+                "android.hardware.bluetooth@1.0",
+                "com.qualcomm.qti.ant@1.0",
+                "vendor.qti.hardware.fm@1.0_vendor",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "both",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6814,6 +6843,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -6831,6 +6861,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -6909,6 +6940,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -6926,6 +6958,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -7453,6 +7486,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -7470,6 +7504,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -8594,6 +8629,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -10729,6 +10765,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.display.color@1.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -11661,6 +11698,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so",
             ],
             shared_libs: [
+                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
