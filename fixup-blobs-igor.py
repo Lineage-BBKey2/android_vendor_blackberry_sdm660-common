@@ -1,0 +1,180 @@
+#!/usr/bin/env python3
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Standalone script to apply and verify fixups for sdm660-common blobs,
+# including updating dependent libraries when a library is renamed.
+#
+
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+
+# ------------------------------------------------------------
+# Helpers
+# ------------------------------------------------------------
+
+def run_cmd(cmd: list[str]) -> str:
+    """Run a shell command and return stdout, raise on failure."""
+    result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+    return result.stdout.strip()
+
+
+def list_needed(path: Path) -> list[str]:
+    """Return DT_NEEDED entries of ELF using readelf."""
+    output = run_cmd(["readelf", "-d", str(path)])
+    needed = []
+    for line in output.splitlines():
+        if "Shared library:" in line:
+            needed.append(line.split("[")[1].split("]")[0])
+    return needed
+
+
+def add_needed(path: Path, lib: str):
+    """Add DT_NEEDED with patchelf if not already present."""
+    if lib not in list_needed(path):
+        run_cmd(["patchelf", "--add-needed", lib, str(path)])
+
+
+def replace_needed(path: Path, old: str, new: str):
+    """Replace DT_NEEDED entry with patchelf if present."""
+    needed = list_needed(path)
+    if old in needed and new not in needed:
+        run_cmd(["patchelf", "--replace-needed", old, new, str(path)])
+
+
+def rename_lib(path: Path, new_name: str) -> Path:
+    """Rename library file and return the new Path."""
+    new_path = path.with_name(new_name)
+    if new_path.exists():
+        print(f"[WARN] {new_path} already exists, skipping rename of {path}")
+        return path
+    path.rename(new_path)
+    return new_path
+
+
+def fixup_blob(path: Path, fix):
+    """Apply blob fixups and check results."""
+    ok = True
+    if "add" in fix:
+        for lib in fix["add"]:
+            add_needed(path, lib)
+            if lib not in list_needed(path):
+                print(f"[WARN] {path}: failed to add_needed {lib}")
+                ok = False
+    if "replace" in fix:
+        for old, new in fix["replace"].items():
+            replace_needed(path, old, new)
+            if new not in list_needed(path):
+                print(f"[WARN] {path}: failed to replace {old} -> {new}")
+                ok = False
+    return ok
+
+
+# ------------------------------------------------------------
+# Fixup rules
+# ------------------------------------------------------------
+
+# Blob-specific DT_NEEDED fixups (full list from original script)
+BLOB_FIXUPS = {
+    "vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/com.quicinc.cne.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.quicinc.cne.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.quicinc.cne.server@2.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/com.quicinc.cne.server@2.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/com.qualcomm.qti.imscmservice@1.1_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "system/lib64/com.qualcomm.qti.ant@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "system/lib/com.qualcomm.qti.ant@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "system/lib64/com.qualcomm.qti.dpm.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/vendor.qti.gnss@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.gnss@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/com.qualcomm.qti.imscmservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
+#    "vendor/lib/com.qualcomm.qti.imsrtpservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
+#    "vendor/lib64/com.qualcomm.qti.imsrtpservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "system/lib64/libdpmframework.so": {"replace": {"libcutils.so": "libcutils-v29.so"}},
+    "system/lib/lib-imsvideocodec.so": {"add": ["libgui_shim.so"]},
+    "system/lib64/lib-imsvideocodec.so": {"add": ["libgui_shim.so"]},
+    "system/lib/lib-imscamera.so": {"add": ["libgui_shim.so"]},
+    "system/lib64/lib-imscamera.so": {"add": ["libgui_shim.so"]},
+    "system/lib/libantradio.so": {"add": ["libnativehelper_shim.so"]},
+    "system/lib64/libantradio.so": {"add": ["libnativehelper_shim.so"]},
+    "system/lib/lib-imsvt.so": {"add": ["libgui_shim.so"]},
+    "system/lib64/lib-imsvt.so": {"add": ["libgui_shim.so"]},
+    "system/lib/libimsmedia_jni.so": {"add": ["libgui_shim.so"]},
+    "system/lib64/libimsmedia_jni.so": {"add": ["libgui_shim.so"]},
+    "vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so": {"add": ["libbase_shim.so"]},
+    "vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so": {"add": ["libbase_shim.so"]},
+    "vendor/bin/hw/android.hardware.drm@1.0-service.widevine": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
+    "vendor/bin/imsrcsd": {"add": ["libhidlbase-v32.so", "libbase_shim.so"]},
+    "vendor/lib/lib-imsrcs-v2.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
+    "vendor/lib64/lib-imsrcs-v2.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
+    "vendor/lib/lib-uceservice.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
+    "vendor/lib64/lib-uceservice.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
+    "vendor/lib64/libperipheral_client.so": {"replace": {"libutils.so": "libutils-v33.so"}},
+    "vendor/lib64/libperipheral_client.so": {"replace": {"libcutils.so": "libcutils-v29.so"}},
+    "vendor/bin/pm-service": {"replace": {"libutils.so": "libcutils-v33.so"}},
+    "vendor/bin/pm-service": {"replace": {"libcutils.so": "libcutils-v29.so"}},
+    "vendor/lib64/lib-dplmedia.so": {"replace": {"libmedia.so":"libmedia_vendor.so"}},
+    "vendor/bin/loc_launcher": {"add": ["libloc_api_v02.so"]},
+    "vendor/lib64/libavservices_minijail_vendor.so": {"add": ["libbase_shim.so"]},
+
+#    "vendor/bin/hw/android.hardware.audio.service" : {"add": ["libhidlbase-v32.so"]},
+}
+
+# Library rename fixups (like original extract-utils)
+def lib_fixup_vendor_suffix(lib: str, partition: str):
+    """Apply _vendor suffix if partition is vendor."""
+    return f"{lib}_{partition}" if partition == "vendor" else None
+
+
+
+# ------------------------------------------------------------
+# Main
+# ------------------------------------------------------------
+
+def apply_blob_fixups(folder: Path):
+    for relpath, rules in BLOB_FIXUPS.items():
+        matches = list(folder.rglob(os.path.basename(relpath)))
+        if not matches:
+            print(f"[INFO] {relpath} not found in {folder}")
+            continue
+        for match in matches:
+            print(f"[INFO] Fixing {match}")
+            success = fixup_blob(match, rules)
+            print(f"[{'OK' if success else 'FAIL'}] {match}")
+
+
+
+def main(folder: str):
+    folder = Path(folder)
+    if not folder.is_dir():
+        print(f"Error: {folder} is not a directory")
+        sys.exit(1)
+
+    apply_blob_fixups(folder)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        main("./proprietary")
+    else:
+        main(sys.argv[1])

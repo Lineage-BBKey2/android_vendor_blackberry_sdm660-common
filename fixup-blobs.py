@@ -78,66 +78,28 @@ def fixup_blob(path: Path, fix):
 # ------------------------------------------------------------
 
 # Blob-specific DT_NEEDED fixups (full list from original script)
-BLOB_FIXUPS = {
-    "vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/com.quicinc.cne.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.quicinc.cne.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.quicinc.cne.server@2.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/com.quicinc.cne.server@2.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/com.qualcomm.qti.imscmservice@1.1_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "system/lib64/com.qualcomm.qti.ant@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "system/lib/com.qualcomm.qti.ant@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "system/lib64/com.qualcomm.qti.dpm.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/vendor.qti.gnss@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.gnss@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/com.qualcomm.qti.imscmservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
-#    "vendor/lib/com.qualcomm.qti.imsrtpservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
-#    "vendor/lib64/com.qualcomm.qti.imsrtpservice@1.0.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
-    "system/lib64/libdpmframework.so": {"replace": {"libcutils.so": "libcutils-v29.so"}},
-    "system/lib/lib-imsvideocodec.so": {"add": ["libgui_shim.so"]},
-    "system/lib64/lib-imsvideocodec.so": {"add": ["libgui_shim.so"]},
-    "system/lib/lib-imscamera.so": {"add": ["libgui_shim.so"]},
-    "system/lib64/lib-imscamera.so": {"add": ["libgui_shim.so"]},
-    "system/lib/libantradio.so": {"add": ["libnativehelper_shim.so"]},
-    "system/lib64/libantradio.so": {"add": ["libnativehelper_shim.so"]},
-    "system/lib/lib-imsvt.so": {"add": ["libgui_shim.so"]},
-    "system/lib64/lib-imsvt.so": {"add": ["libgui_shim.so"]},
-    "system/lib/libimsmedia_jni.so": {"add": ["libgui_shim.so"]},
-    "system/lib64/libimsmedia_jni.so": {"add": ["libgui_shim.so"]},
-    "vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so": {"add": ["libbase_shim.so"]},
-    "vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so": {"add": ["libbase_shim.so"]},
-    "vendor/bin/hw/android.hardware.drm@1.0-service.widevine": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
-    "vendor/bin/imsrcsd": {"add": ["libhidlbase-v32.so", "libbase_shim.so"]},
-    "vendor/lib/lib-imsrcs-v2.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
-    "vendor/lib64/lib-imsrcs-v2.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
-    "vendor/lib/lib-uceservice.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
-    "vendor/lib64/lib-uceservice.so": {"add": ["libbase_shim.so", "libhidlbase-v32.so"]},
-    "vendor/lib64/libperipheral_client.so": {"replace": {"libutils.so": "libutils-v33.so"}},
-    "vendor/lib64/libperipheral_client.so": {"replace": {"libcutils.so": "libcutils-v29.so"}},
-    "vendor/bin/pm-service": {"replace": {"libutils.so": "libcutils-v33.so"}},
-    "vendor/bin/pm-service": {"replace": {"libcutils.so": "libcutils-v29.so"}},
-    "vendor/lib64/lib-dplmedia.so": {"replace": {"libmedia.so":"libmedia_vendor.so"}},
-    "vendor/bin/loc_launcher": {"add": ["libloc_api_v02.so"]},
-    "vendor/lib64/libavservices_minijail_vendor.so": {"add": ["libbase_shim.so"]},
+#vendor.qti.hardware.qteeconnector@1.0.so
+#com.qualcomm.qti.dpm.api@1.0_vendor.so
 
-#    "vendor/bin/hw/android.hardware.audio.service" : {"add": ["libhidlbase-v32.so"]},
+#vendor.display.color@1.0.so
+#vendor.qti.imsrtpservice@1.0_vendor.so
+#vendor.qti.hardware.radio.ims@1.0.so
+#com.quicinc.cne.api@1.0.so
+
+#com.qualcomm.qti.imscmservice@2.0.so
+#vendor.qti.hardware.fm@1.0_vendor.so
+
+BLOB_FIXUPS = {
+    "vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+
+    "vendor/lib64/vendor.display.color@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.quicinc.cne.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
 }
 
 # Library rename fixups (like original extract-utils)
