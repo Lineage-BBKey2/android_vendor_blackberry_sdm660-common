@@ -19,25 +19,6 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system/lib/com.qualcomm.qti.ant@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "android.hidl.base@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
         android_arm64: {
             srcs: [
                 "proprietary/system/lib64/com.qualcomm.qti.ant@1.0.so",
@@ -58,7 +39,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "both",
+    compile_multilib: "64",
     prefer: true,
 }
 
@@ -69,28 +50,6 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system/lib/libantradio.so",
-            ],
-            shared_libs: [
-                "libnativehelper_shim",
-                "libnativehelper",
-                "libbase",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "libutils",
-                "com.qualcomm.qti.ant@1.0",
-                "android.hardware.bluetooth@1.0",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
         android_arm64: {
             srcs: [
                 "proprietary/system/lib64/libantradio.so",
@@ -114,7 +73,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "both",
+    compile_multilib: "64",
     prefer: true,
 }
 
@@ -125,24 +84,6 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system/lib/vendor.qti.hardware.fm@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "android.hidl.base@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
         android_arm64: {
             srcs: [
                 "proprietary/system/lib64/vendor.qti.hardware.fm@1.0.so",
@@ -162,58 +103,8 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "both",
+    compile_multilib: "64",
     prefer: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.ant@1.0_vendor",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "android.hidl.base@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "android.hidl.base@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -847,62 +738,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "android.hardware.bluetooth@1.0-impl-qti",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libutils",
-                "libdiag",
-                "libqmiservices",
-                "libqmi_cci",
-                "android.hardware.bluetooth@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libutils",
-                "libdiag",
-                "libqmiservices",
-                "libqmi_cci",
-                "android.hardware.bluetooth@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "android.hardware.gatekeeper@1.0-impl-qti",
     owner: "blackberry",
     strip: {
@@ -1007,62 +842,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.ant@1.0-impl",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libhwbinder",
-                "libutils",
-                "com.qualcomm.qti.ant@1.0_vendor",
-                "android.hardware.bluetooth@1.0",
-                "android.hardware.bluetooth@1.0-impl-qti",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libhwbinder",
-                "libutils",
-                "com.qualcomm.qti.ant@1.0_vendor",
-                "android.hardware.bluetooth@1.0",
-                "android.hardware.bluetooth@1.0-impl-qti",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "sound_trigger.primary.sdm660",
     owner: "blackberry",
     strip: {
@@ -1095,60 +874,6 @@ cc_prebuilt_library_shared {
                 "libtinyalsa",
                 "libaudioroute",
                 "libexpat",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.fm@1.0-impl",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libhwbinder",
-                "libutils",
-                "vendor.qti.hardware.fm@1.0_vendor",
-                "android.hardware.bluetooth@1.0-impl-qti",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libhidlbase",
-                "libhidltransport",
-                "liblog",
-                "libhwbinder",
-                "libutils",
-                "vendor.qti.hardware.fm@1.0_vendor",
-                "android.hardware.bluetooth@1.0-impl-qti",
                 "libc++",
                 "libc",
                 "libm",
@@ -2136,90 +1861,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libbt-hidlclient",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libbt-hidlclient.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libhidlbase",
-                "libhidltransport",
-                "android.hardware.bluetooth@1.0",
-                "com.qualcomm.qti.ant@1.0",
-                "vendor.qti.hardware.fm@1.0_vendor",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libbt-hidlclient.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libhidlbase",
-                "libhidltransport",
-                "android.hardware.bluetooth@1.0",
-                "com.qualcomm.qti.ant@1.0",
-                "vendor.qti.hardware.fm@1.0_vendor",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libbtnv",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libbtnv.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libbtnv.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -6832,55 +6473,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.fm@1.0_vendor",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.perf@1.0_vendor",
     owner: "blackberry",
     strip: {
@@ -8618,6 +8210,38 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.ant@1.0_vendor",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so",
+            ],
+            shared_libs: [
+                "libhidlbase-v32",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "android.hidl.base@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "com.qualcomm.qti.imscmservice@2.0",
     owner: "blackberry",
     strip: {
@@ -8958,6 +8582,76 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.bluetooth@1.0-impl-qti",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libhidlbase",
+                "libhidltransport",
+                "liblog",
+                "libutils",
+                "libdiag",
+                "libqmiservices",
+                "libqmi_cci",
+                "android.hardware.bluetooth@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.ant@1.0-impl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libhidlbase",
+                "libhidltransport",
+                "liblog",
+                "libhwbinder",
+                "libutils",
+                "com.qualcomm.qti.ant@1.0_vendor",
+                "android.hardware.bluetooth@1.0",
+                "android.hardware.bluetooth@1.0-impl-qti",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.gnss@4.0-impl",
     owner: "blackberry",
     strip: {
@@ -8972,6 +8666,40 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     check_elf_files: false,
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.fm@1.0-impl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libhidlbase",
+                "libhidltransport",
+                "liblog",
+                "libhwbinder",
+                "libutils",
+                "vendor.qti.hardware.fm@1.0_vendor",
+                "android.hardware.bluetooth@1.0-impl-qti",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     relative_install_path: "hw",
     prefer: true,
     soc_specific: true,
@@ -9517,6 +9245,30 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbtnv",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbtnv.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -11573,6 +11325,37 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.fm@1.0_vendor",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so",
+            ],
+            shared_libs: [
+                "libhidlbase-v32",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.mwqemadapter@1.0",
     owner: "blackberry",
     strip: {
@@ -13073,14 +12856,12 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
                 "liblog",
                 "libutils",
                 "libcutils",
-                "android.hidl.base@1.0",
                 "libc++",
                 "libc",
                 "libm",
@@ -13105,7 +12886,6 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/lib-imscamera.so",
             ],
             shared_libs: [
-                "libgui_shim",
                 "libcutils",
                 "libutils",
                 "liblog",
@@ -13155,22 +12935,14 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/lib-imsvideocodec.so",
             ],
             shared_libs: [
-                "libgui_shim",
-                "libmediandk",
+                "lib-imsvtutils",
+                "lib-imsvtextutils",
                 "libcutils",
                 "libutils",
                 "liblog",
-                "libnativehelper",
-                "libandroid",
-                "libui",
-                "libmedia",
-                "libbinder",
-                "libGLESv2",
-                "libgui",
                 "libdiag_system",
-                "libEGL",
-                "lib-imsvtutils",
-                "lib-imsvtextutils",
+                "libgui",
+                "libandroid",
                 "libcamera_client",
                 "libstagefright_foundation",
                 "libqdMetaData.system",
@@ -13190,6 +12962,14 @@ cc_prebuilt_library_shared {
                 "android.hardware.camera.device@3.2",
                 "libhwbinder",
                 "libhidltransport",
+                "libnativehelper",
+                "libandroid_runtime",
+                "libui",
+                "libmedia",
+                "libmedia_omx",
+                "libbinder",
+                "libGLESv2",
+                "libEGL",
                 "lib-imscamera",
                 "libc++",
                 "libc",
@@ -13355,7 +13135,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libdiag_system",
                 "libbinder",
-                "libcutils-v29",
+                "libcutils",
                 "libutils",
                 "liblog",
                 "libhwbinder",
@@ -13446,13 +13226,13 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libimsmedia_jni.so",
             ],
             shared_libs: [
-                "libgui_shim",
                 "libnativehelper",
                 "libcutils",
                 "libutils",
                 "libgui",
                 "libbinder",
                 "liblog",
+                "libandroid",
                 "libc++",
                 "libc",
                 "libm",

@@ -143,7 +143,6 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.ant@1.0 \
     libantradio \
     vendor.qti.hardware.fm@1.0 \
-    com.qualcomm.qti.ant@1.0_vendor \
     com.qualcomm.qti.dpm.api@1.0_vendor \
     com.qualcomm.qti.imscmservice@1.0_vendor \
     com.qualcomm.qti.imscmservice@1.1_vendor \
@@ -157,12 +156,9 @@ PRODUCT_PACKAGES += \
     libGLESv2_adreno \
     libQTapGLES \
     libq3dtools_adreno \
-    android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.keymaster@3.0-impl-qti \
-    com.qualcomm.qti.ant@1.0-impl \
     sound_trigger.primary.sdm660 \
-    vendor.qti.hardware.fm@1.0-impl \
     vulkan.sdm660 \
     lib-dplmedia \
     lib-rtpdaemoninterface \
@@ -187,8 +183,6 @@ PRODUCT_PACKAGES += \
     libaudioparsers \
     libbbry_vs \
     libbccQTI \
-    libbt-hidlclient \
-    libbtnv \
     libc2d30_bltlib \
     libcdsprpc \
     libdiag \
@@ -299,7 +293,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0_vendor \
     vendor.display.postproc@1.0_vendor \
     vendor.qti.hardware.data.latency@1.0_vendor \
-    vendor.qti.hardware.fm@1.0_vendor \
     vendor.qti.hardware.perf@1.0_vendor \
     vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.radio.am@1.0_vendor \
@@ -361,6 +354,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0_vendor \
     android.hardware.radio.deprecated@1.0_vendor \
     android.hardware.secure_element@1.0_vendor \
+    com.qualcomm.qti.ant@1.0_vendor \
     com.qualcomm.qti.imscmservice@2.0 \
     com.qualcomm.qti.imscmservice@2.1 \
     com.qualcomm.qti.imscmservice@2.2 \
@@ -372,7 +366,10 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne.constants@2.1 \
     com.quicinc.cne.server@2.1 \
     com.quicinc.cne.server@2.2 \
+    android.hardware.bluetooth@1.0-impl-qti \
+    com.qualcomm.qti.ant@1.0-impl \
     vendor.qti.gnss@4.0-impl \
+    vendor.qti.hardware.fm@1.0-impl \
     vendor.qti.hardware.qccvndhal@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-impl \
     lib-imsSDP \
@@ -393,6 +390,7 @@ PRODUCT_PACKAGES += \
     libasn1cper \
     libasn1crt \
     libasn1crtx \
+    libbtnv \
     libcdfw \
     libcdfw_remote_api \
     libcne \
@@ -469,6 +467,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.latency@1.0 \
     vendor.qti.hardware.data.lce@1.0 \
     vendor.qti.hardware.data.qmi@1.0 \
+    vendor.qti.hardware.fm@1.0_vendor \
     vendor.qti.hardware.mwqemadapter@1.0 \
     vendor.qti.hardware.qccsyshal@1.0_vendor \
     vendor.qti.hardware.qccvndhal@1.0-halimpl \
