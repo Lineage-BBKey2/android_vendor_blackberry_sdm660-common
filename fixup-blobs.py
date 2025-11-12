@@ -100,6 +100,8 @@ BLOB_FIXUPS = {
     "vendor/lib64/com.quicinc.cne.api@1.0.so": {"add": ["libhidlbase-v32.so"]},
     "vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so": {"add": ["libhidlbase-v32.so"]},
     "vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so": {"add": ["libhidlbase-v32.so"]},
+    "vendor/lib/hw/audio.primary.sdm660.so": {"add": ["libprocessgroup.so"]},
+    "vendor/lib64/hw/audio.primary.sdm660.so": {"add": ["libprocessgroup.so"]},
 }
 
 # Library rename fixups (like original extract-utils)
