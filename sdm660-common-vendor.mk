@@ -548,9 +548,6 @@ PRODUCT_PACKAGES += \
     CneApp \
     IWlanService \
     TimeService \
-    QtiTelephonyService \
-    dpmserviceapp \
-    qcrilmsgtunnel \
     com.qti.dpmframework \
     dpmapi \
     qcrilhook \
@@ -560,7 +557,6 @@ PRODUCT_PACKAGES += \
     audioflacapp \
     cnd \
     cnss-daemon \
-    cnss_diag \
     dpmQmiMgr \
     energy-awareness \
     hvdcp_opti \
