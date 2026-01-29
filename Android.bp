@@ -5,7 +5,6 @@
 soong_namespace {
     imports: [
         "device/blackberry/sdm660-common",
-        "vendor/blackberry/luna",
         "hardware/qcom-caf/msm8998",
         "hardware/qcom-caf/wlan",
         "vendor/qcom/opensource/dataservices",
@@ -8959,16 +8958,6 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     system_ext_specific: true,
-}
-
-android_app_import {
-    name: "BlackBerryKeyboard",
-    owner: "blackberry",
-    apk: "proprietary/system/app/BlackBerryKeyboard/BlackBerryKeyboard.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
 }
 
 android_app_import {
