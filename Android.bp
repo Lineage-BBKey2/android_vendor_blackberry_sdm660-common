@@ -5391,6 +5391,53 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@4.0-impl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libhidlbase",
+                "libutils",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss@1.1",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "vendor.qti.gnss@1.2",
+                "vendor.qti.gnss@2.0",
+                "vendor.qti.gnss@2.1",
+                "vendor.qti.gnss@3.0",
+                "vendor.qti.gnss@4.0",
+                "libloc_core",
+                "libgps.utils",
+                "liblocation_api",
+                "liblocationservice_glue",
+                "liblbs_core",
+                "libdataitems",
+                "liblocationservice",
+                "libxtadapter",
+                "libizat_core",
+                "libizat_client_api",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.bluetooth_sar@1.1-impl",
     owner: "blackberry",
     strip: {
@@ -5555,6 +5602,81 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libasn1cper",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libasn1cper.so",
+            ],
+            shared_libs: [
+                "libasn1crtx",
+                "libasn1crt",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libasn1crt",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libasn1crt.so",
+            ],
+            shared_libs: [
+                "libasn1crtx",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libasn1crtx",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libasn1crtx.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libbt-hidlclient",
     owner: "blackberry",
     strip: {
@@ -5596,6 +5718,58 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libbtnv.so",
             ],
             shared_libs: [
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libcdfw",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcdfw.so",
+            ],
+            shared_libs: [
+                "libgps.utils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libcdfw_remote_api",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcdfw_remote_api.so",
+            ],
+            shared_libs: [
+                "libgps.utils",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -5737,10 +5911,19 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/libdataitems.so",
             ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libgps.utils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -5814,10 +5997,79 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/libgdtap.so",
             ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libgps.utils",
+                "liblog",
+                "libloc_core",
+                "libizat_core",
+                "liblbs_core",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libizat_client_api",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libizat_client_api.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libgps.utils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libizat_core",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libizat_core.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libloc_core",
+                "libgps.utils",
+                "libloc_api_v02",
+                "libsqlite",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -5833,10 +6085,27 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/liblbs_core.so",
             ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libizat_core",
+                "libloc_core",
+                "libgps.utils",
+                "libcrypto",
+                "libsqlite",
+                "libloc_api_v02",
+                "libmdmdetect",
+                "libperipheral_client",
+                "libpdmapper",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -5852,10 +6121,51 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/libloc_api_v02.so",
             ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libloc_core",
+                "libgps.utils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libloc_socket",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libloc_socket.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libgps.utils",
+                "libqsocket",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -5871,10 +6181,24 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/liblocationservice.so",
             ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libloc_core",
+                "libgps.utils",
+                "liblbs_core",
+                "libdataitems",
+                "liblowi_client",
+                "libizat_core",
+                "liblocation_api",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -5890,10 +6214,25 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/liblocationservice_glue.so",
             ],
+            shared_libs: [
+                "liblocationservice",
+                "libcutils",
+                "liblog",
+                "libloc_core",
+                "libgps.utils",
+                "libhardware_legacy",
+                "liblbs_core",
+                "libdataitems",
+                "liblocation_api",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -5909,10 +6248,18 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/liblowi_client.so",
             ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6557,10 +6904,80 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/libxtadapter.so",
             ],
+            shared_libs: [
+                "libgps.utils",
+                "liblog",
+                "libloc_core",
+                "libizat_core",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libxtwifi_server_protocol",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libxtwifi_server_protocol.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libasn1cper",
+                "libasn1crt",
+                "libasn1crtx",
+                "libloc_core",
+                "libgps.utils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libxtwifi_server_protocol_uri_v3",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libxtwifi_server_protocol_uri_v3.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libgps.utils",
+                "libasn1cper",
+                "libasn1crt",
+                "libasn1crtx",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -6926,10 +7343,20 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/vendor.qti.gnss@1.0.so",
             ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6945,10 +7372,21 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/vendor.qti.gnss@1.1.so",
             ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "vendor.qti.gnss@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6964,10 +7402,22 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/vendor.qti.gnss@1.2.so",
             ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6983,10 +7433,23 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/vendor.qti.gnss@2.0.so",
             ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "vendor.qti.gnss@1.2",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -7002,10 +7465,134 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/vendor.qti.gnss@2.1.so",
             ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "vendor.qti.gnss@1.2",
+                "vendor.qti.gnss@2.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@3.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@3.0.so",
+            ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "vendor.qti.gnss@1.2",
+                "vendor.qti.gnss@2.0",
+                "vendor.qti.gnss@2.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@4.0-service",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@4.0-service.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libgps.utils",
+                "libqti_vndfwk_detect",
+                "libhidlbase",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss@1.1",
+                "android.hardware.gnss@2.0",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "vendor.qti.gnss@1.2",
+                "vendor.qti.gnss@2.0",
+                "vendor.qti.gnss@2.1",
+                "vendor.qti.gnss@3.0",
+                "vendor.qti.gnss@4.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.gnss@4.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.gnss@4.0.so",
+            ],
+            shared_libs: [
+                "android.hardware.gnss@1.0",
+                "vendor.qti.gnss@1.0",
+                "vendor.qti.gnss@1.1",
+                "vendor.qti.gnss@1.2",
+                "vendor.qti.gnss@2.0",
+                "vendor.qti.gnss@2.1",
+                "vendor.qti.gnss@3.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -9689,6 +10276,7 @@ cc_prebuilt_binary {
                 "libutils",
                 "libcutils",
                 "libgps.utils",
+                "libqti_vndfwk_detect",
                 "libc++",
                 "libc",
                 "libm",
@@ -9712,6 +10300,20 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/lowi-server",
             ],
+            shared_libs: [
+                "libcutils",
+                "libgps.utils",
+                "liblog",
+                "libnl",
+                "libwpa_client",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libdiag",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
@@ -9731,10 +10333,18 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/mlid",
             ],
+            shared_libs: [
+                "libcutils",
+                "liblowi_client",
+                "libminksocket",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -10126,10 +10736,29 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/xtra-daemon",
             ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libcrypto",
+                "libssl",
+                "libsqlite",
+                "libgps.utils",
+                "libloc_core",
+                "libizat_core",
+                "liblbs_core",
+                "liblog",
+                "libandroid_net",
+                "libavservices_minijail",
+                "libcdfw_remote_api",
+                "libqcc_file_agent",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -10145,10 +10774,35 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/xtwifi-client",
             ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libcrypto",
+                "libz",
+                "libsqlite",
+                "libqmiservices",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libgps.utils",
+                "libloc_core",
+                "libizat_core",
+                "liblbs_core",
+                "libavservices_minijail",
+                "libgdtap",
+                "libasn1cper",
+                "libasn1crt",
+                "libasn1crtx",
+                "libxtwifi_server_protocol",
+                "libxtwifi_server_protocol_uri_v3",
+                "liblowi_client",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -10164,10 +10818,20 @@ cc_prebuilt_binary {
             srcs: [
                 "proprietary/vendor/bin/xtwifi-inet-agent",
             ],
+            shared_libs: [
+                "libc",
+                "libcutils",
+                "liblog",
+                "libcurl",
+                "libgps.utils",
+                "libavservices_minijail",
+                "libc++",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },

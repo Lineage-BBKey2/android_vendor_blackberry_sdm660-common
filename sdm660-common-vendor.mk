@@ -232,13 +232,19 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.dpm.api@1.0_vendor \
     ftm_fm_lib \
     android.hardware.bluetooth@1.0-impl-qti \
+    vendor.qti.gnss@4.0-impl \
     vendor.qti.hardware.bluetooth_sar@1.1-impl \
     vendor.qti.hardware.fm@1.0-impl \
     vendor.qti.hardware.qccvndhal@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-impl \
     libQTEEConnector_vendor \
+    libasn1cper \
+    libasn1crt \
+    libasn1crtx \
     libbt-hidlclient \
     libbtnv \
+    libcdfw \
+    libcdfw_remote_api \
     libcne \
     libcneapiclient \
     libcneoplookup \
@@ -246,8 +252,11 @@ PRODUCT_PACKAGES += \
     libdisp-aba \
     libdpmqmihal \
     libgdtap \
+    libizat_client_api \
+    libizat_core \
     liblbs_core \
     libloc_api_v02 \
+    libloc_socket \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
@@ -273,6 +282,8 @@ PRODUCT_PACKAGES += \
     libwms \
     libwqe \
     libxtadapter \
+    libxtwifi_server_protocol \
+    libxtwifi_server_protocol_uri_v3 \
     qcrild_librilutils \
     vendor.display.color@1.0 \
     vendor.display.color@1.1 \
@@ -289,6 +300,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@1.2 \
     vendor.qti.gnss@2.0 \
     vendor.qti.gnss@2.1 \
+    vendor.qti.gnss@3.0 \
+    vendor.qti.gnss@4.0-service \
+    vendor.qti.gnss@4.0 \
     vendor.qti.hardware.bluetooth_sar@1.0 \
     vendor.qti.hardware.bluetooth_sar@1.1 \
     vendor.qti.hardware.data.cne.internal.api@1.0 \
