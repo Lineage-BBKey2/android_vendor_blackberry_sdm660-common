@@ -47,11 +47,11 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.0-service.widevine.rc \
-    vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc \
-    vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@3.0-service-qti.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/cnd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnd.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/dpmQmiMgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dpmQmiMgr.rc \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/qcrild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qcrild.rc \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/qseecomd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qseecomd.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/vendor.display.color@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.display.color@1.0-service.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.perf@1.0-service.rc \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc \
@@ -109,10 +109,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.qualcomm.qti.ant@1.0 \
-    com.qualcomm.qti.imscmservice@1.0 \
-    com.qualcomm.qti.imscmservice@2.0 \
-    com.qualcomm.qti.imscmservice@2.1 \
-    com.qualcomm.qti.uceservice@2.0 \
     com.quicinc.cne.constants@1.0 \
     com.quicinc.cne.constants@2.0 \
     com.quicinc.cne.server@2.0 \
@@ -120,55 +116,27 @@ PRODUCT_PACKAGES += \
     libEGL_adreno \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
-    libQTapGLES \
     libq3dtools_adreno \
-    android.hardware.gatekeeper@1.0-impl-qti \
-    android.hardware.keymaster@3.0-impl-qti \
-    sound_trigger.primary.sdm660 \
-    vulkan.sdm660 \
+    libq3dtools_esx \
+    vulkan.adreno \
     lib-dplmedia \
-    lib-imscmservice \
-    lib-imsdpl \
-    lib-imsqimf \
-    lib-imsrcs-v2 \
-    lib-imsrcsbaseimpl \
-    lib-imsxml \
-    lib-rtpcommon \
-    lib-rtpcore \
-    lib-rtpdaemoninterface \
-    lib-rtpsl \
-    lib-siputility \
-    lib-uceservice \
     libC2D2 \
     libCB \
-    libGPreqcancel \
-    libGPreqcancel_svc \
     libOpenCL \
     libQSEEComAPI \
-    libRSDriver_adreno \
-    libStDrvInt \
+    libVkLayer_q3dtools \
     libadreno_utils \
-    libbccQTI \
     libc2d30_bltlib \
     libconfigdb \
     libdiag \
-    libdrmfs \
-    libdrmtime \
     libdsi_netctrl \
     libdsutils \
     libevent_observer \
     libfeedbackhandler \
-    libgcs-calwrapper \
-    libgcs-ipc \
-    libgcs-osal \
-    libgcs \
+    libgpudataproducer \
     libgpustats \
     libgsl \
-    libhdr_tm \
     libidl \
-    libkeymasterdeviceutils \
-    libkeymasterprovision \
-    libkeymasterutils \
     libllvm-glnext \
     libllvm-qcom \
     libmdmdetect \
@@ -181,7 +149,6 @@ PRODUCT_PACKAGES += \
     libperfgluelayer \
     libqdi \
     libqdp \
-    libqisl \
     libqmi \
     libqmi_cci \
     libqmi_client_helper \
@@ -191,37 +158,23 @@ PRODUCT_PACKAGES += \
     libqmi_encdec \
     libqmiservices \
     libqrtr \
-    libqseed3 \
     libqsocket \
     libqti-perfd-client \
     libqti-perfd \
     libqti-util \
-    librpmb \
     librs_adreno \
-    librs_adreno_sha1 \
-    libsdm-color \
-    libsdm-diag \
-    libsdm-disp-vndapis \
-    libsdmextension \
-    libsdmutils \
-    libsecureui \
-    libsecureui_svcsock \
     libsensor1 \
     libsensor_reg \
-    libssd \
     libthermalclient \
-    libtime_genoff \
     libtinyxml2_1 \
     libxml \
     sensor_calibrate \
     sensors.ssc \
     vendor.qti.hardware.perf@1.0_vendor \
-    vendor.qti.hardware.qteeconnector@1.0 \
-    vendor.qti.ims.callinfo@1.0 \
     vendor.qti.imsrtpservice@1.0-service-Impl \
     vendor.qti.imsrtpservice@1.0 \
-    libq3dtools_esx \
     android.hardware.drm@1.0-impl \
+    sound_trigger.primary.sdm660 \
     libOmxVideoDSMode \
     libadpcmdec \
     libsmwrapper \
@@ -230,14 +183,31 @@ PRODUCT_PACKAGES += \
     libwfdmmservice \
     libwvhidl \
     com.qualcomm.qti.dpm.api@1.0_vendor \
-    ftm_fm_lib \
+    com.qualcomm.qti.imscmservice@1.0 \
+    com.qualcomm.qti.imscmservice@2.0 \
+    com.qualcomm.qti.imscmservice@2.1 \
+    com.qualcomm.qti.uceservice@2.0 \
     android.hardware.bluetooth@1.0-impl-qti \
     vendor.qti.gnss@4.0-impl \
     vendor.qti.hardware.bluetooth_sar@1.1-impl \
     vendor.qti.hardware.fm@1.0-impl \
     vendor.qti.hardware.qccvndhal@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-impl \
-    libQTEEConnector_vendor \
+    lib-imscmservice \
+    lib-imsdpl \
+    lib-imsqimf \
+    lib-imsrcs-v2 \
+    lib-imsrcsbaseimpl \
+    lib-imsxml \
+    lib-rtpcommon \
+    lib-rtpcore \
+    lib-rtpdaemoninterface \
+    lib-rtpsl \
+    lib-siputility \
+    lib-uceservice \
+    libGPreqcancel \
+    libGPreqcancel_svc \
+    libStDrvInt \
     libasn1cper \
     libasn1crt \
     libasn1crtx \
@@ -251,7 +221,10 @@ PRODUCT_PACKAGES += \
     libdataitems \
     libdisp-aba \
     libdpmqmihal \
+    libdrmfs \
+    libdrmtime \
     libgdtap \
+    libhdr_tm \
     libizat_client_api \
     libizat_core \
     liblbs_core \
@@ -269,6 +242,8 @@ PRODUCT_PACKAGES += \
     libqcc_file_agent \
     libqcmaputils \
     libqcrilFramework \
+    libqisl \
+    libqseed3 \
     librcc \
     libril-qc-hal-qmi \
     libril-qc-ltedirectdisc \
@@ -276,9 +251,18 @@ PRODUCT_PACKAGES += \
     libril-qc-radioconfig \
     libril-qcril-hook-oem \
     librilqmiservices \
+    librpmb \
+    libsdm-color \
+    libsdm-diag \
+    libsdm-disp-vndapis \
+    libsdmextension \
+    libsecureui \
+    libsecureui_svcsock \
     libsettings \
+    libssd \
     libsystem_health_mon \
     libthermalioctl \
+    libtime_genoff \
     libwms \
     libwqe \
     libxtadapter \
@@ -286,8 +270,6 @@ PRODUCT_PACKAGES += \
     libxtwifi_server_protocol_uri_v3 \
     qcrild_librilutils \
     vendor.display.color@1.0 \
-    vendor.display.color@1.1 \
-    vendor.display.color@1.2 \
     vendor.display.postproc@1.0 \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.1 \
@@ -320,6 +302,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qccsyshal@1.0_vendor \
     vendor.qti.hardware.qccvndhal@1.0-halimpl \
     vendor.qti.hardware.qccvndhal@1.0_vendor \
+    vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.radio.am@1.0 \
     vendor.qti.hardware.radio.atcmdfwd@1.0 \
     vendor.qti.hardware.radio.ims@1.0 \
@@ -337,6 +320,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.uim_remote_server@1.0 \
     vendor.qti.hardware.slmadapter@1.0 \
     vendor.qti.hardware.tui_comm@1.0 \
+    vendor.qti.ims.callinfo@1.0 \
     vendor.qti.ims.rcsconfig@1.0 \
     vendor.qti.ims.rcsconfig@1.1 \
     vendor.qti.imsrtpservice@3.0 \
@@ -386,8 +370,6 @@ PRODUCT_PACKAGES += \
     hvdcp_opti \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.drm@1.0-service.widevine \
-    android.hardware.gatekeeper@1.0-service-qti \
-    android.hardware.keymaster@3.0-service-qti \
     qcrild \
     vendor.display.color@1.0-service \
     vendor.qti.hardware.perf@1.0-service \
@@ -420,13 +402,4 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
-    system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so \
-    vendor_lib_libEGL_adreno_so \
-    vendor_lib_libGLESv2_adreno_so \
-    vendor_lib_libq3dtools_adreno_so \
-    vendor_lib_libq3dtools_esx_so \
-    vendor_lib_hw_vulkan_adreno_so \
-    vendor_lib64_libEGL_adreno_so \
-    vendor_lib64_libGLESv2_adreno_so \
-    vendor_lib64_libq3dtools_adreno_so \
-    vendor_lib64_hw_vulkan_adreno_so
+    system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so
