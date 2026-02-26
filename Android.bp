@@ -4662,9 +4662,9 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libxml.so",
             ],
             shared_libs: [
-                "liblog",
-                "libdiag",
                 "libcutils",
+                "libdiag",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
