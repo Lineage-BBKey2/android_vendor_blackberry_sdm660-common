@@ -59,196 +59,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.imscmservice@1.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.imscmservice@2.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.imscmservice@2.1",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.1.so",
-            ],
-            shared_libs: [
-                "com.qualcomm.qti.imscmservice@2.0",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so",
-            ],
-            shared_libs: [
-                "com.qualcomm.qti.imscmservice@2.0",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.uceservice@2.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/com.qualcomm.qti.uceservice@2.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "com.quicinc.cne.constants@1.0",
     owner: "blackberry",
     strip: {
@@ -905,638 +715,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "lib-imscmservice",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-imscmservice.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhwbinder",
-                "libhidlbase",
-                "libhidltransport",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "lib-imsdpl",
-                "lib-imsqimf",
-                "lib-imsxml",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-imscmservice.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhwbinder",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "lib-imsdpl",
-                "lib-imsqimf",
-                "lib-imsxml",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-imsdpl",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-imsdpl.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libqmiservices",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libdsi_netctrl",
-                "libtime_genoff",
-                "libcrypto",
-                "libssl",
-                "libandroid_net",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-imsdpl.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libqmiservices",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libdsi_netctrl",
-                "libtime_genoff",
-                "libcrypto",
-                "libssl",
-                "libandroid_net",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-imsqimf",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-imsqimf.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "lib-imsxml",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-imsqimf.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "lib-imsxml",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-imsrcs-v2",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-imsrcs-v2.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "lib-imsqimf",
-                "lib-imsxml",
-                "lib-siputility",
-                "libqmi_cci",
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhardware_legacy",
-                "libhardware",
-                "libhwbinder",
-                "libhidlbase",
-                "libhidltransport",
-                "libqmiservices",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "com.qualcomm.qti.uceservice@2.0",
-                "com.qualcomm.qti.imscmservice@2.1",
-                "vendor.qti.ims.callinfo@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-imsrcs-v2.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "lib-imsqimf",
-                "lib-imsxml",
-                "lib-siputility",
-                "libqmi_cci",
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhardware_legacy",
-                "libhardware",
-                "libhwbinder",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libqmiservices",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "com.qualcomm.qti.uceservice@2.0",
-                "com.qualcomm.qti.imscmservice@2.1",
-                "vendor.qti.ims.callinfo@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-imsrcsbaseimpl",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-imsrcsbaseimpl.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhardware_legacy",
-                "libhardware",
-                "libhwbinder",
-                "libhidlbase",
-                "libhidltransport",
-                "libqmiservices",
-                "libqmi_cci",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "com.qualcomm.qti.uceservice@2.0",
-                "com.qualcomm.qti.imscmservice@2.1",
-                "vendor.qti.ims.callinfo@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-imsrcsbaseimpl.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhardware_legacy",
-                "libhardware",
-                "libhwbinder",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libqmiservices",
-                "libqmi_cci",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "com.qualcomm.qti.uceservice@2.0",
-                "com.qualcomm.qti.imscmservice@2.1",
-                "vendor.qti.ims.callinfo@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-imsxml",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-imsxml.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-imsxml.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-rtpcommon",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-rtpcommon.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "lib-imsdpl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-rtpcommon.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "lib-imsdpl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-rtpcore",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-rtpcore.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "lib-imsdpl",
-                "lib-rtpcommon",
-                "lib-dplmedia",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-rtpcore.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "lib-imsdpl",
-                "lib-rtpcommon",
-                "lib-dplmedia",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-rtpdaemoninterface",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-rtpdaemoninterface.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "lib-imsdpl",
-                "lib-rtpcommon",
-                "vendor.qti.imsrtpservice@1.0",
-                "vendor.qti.imsrtpservice@1.0-service-Impl",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-rtpdaemoninterface.so",
-            ],
-            shared_libs: [
-                "libdiag",
-                "libcutils",
-                "lib-imsdpl",
-                "lib-rtpcommon",
-                "vendor.qti.imsrtpservice@1.0",
-                "vendor.qti.imsrtpservice@1.0-service-Impl",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-rtpsl",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-rtpsl.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "lib-imsdpl",
-                "lib-rtpcore",
-                "lib-rtpcommon",
-                "libdiag",
-                "lib-rtpdaemoninterface",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-rtpsl.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "lib-imsdpl",
-                "lib-rtpcore",
-                "lib-rtpcommon",
-                "libdiag",
-                "lib-rtpdaemoninterface",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-siputility",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-siputility.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "lib-imsxml",
-                "lib-imsqimf",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-siputility.so",
-            ],
-            shared_libs: [
-                "lib-imsdpl",
-                "lib-imsxml",
-                "lib-imsqimf",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "lib-uceservice",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/lib-uceservice.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhwbinder",
-                "libhidlbase",
-                "libhidltransport",
-                "lib-imsdpl",
-                "lib-imsqimf",
-                "lib-imsxml",
-                "lib-siputility",
-                "lib-imscmservice",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "com.qualcomm.qti.uceservice@2.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/lib-uceservice.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhwbinder",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "lib-imsdpl",
-                "lib-imsqimf",
-                "lib-imsxml",
-                "lib-siputility",
-                "lib-imscmservice",
-                "com.qualcomm.qti.imscmservice@2.0",
-                "com.qualcomm.qti.uceservice@2.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libC2D2",
     owner: "blackberry",
     strip: {
@@ -1997,49 +1175,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libconfigdb",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libconfigdb.so",
-            ],
-            shared_libs: [
-                "libxml",
-                "libdsutils",
-                "libdiag",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libconfigdb.so",
-            ],
-            shared_libs: [
-                "libxml",
-                "libdsutils",
-                "libdiag",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libdiag",
     owner: "blackberry",
     strip: {
@@ -2052,9 +1187,9 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libc",
                 "libcutils",
                 "libc++",
-                "libc",
                 "libm",
                 "libdl",
             ],
@@ -2065,9 +1200,9 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libc",
                 "libcutils",
                 "libc++",
-                "libc",
                 "libm",
                 "libdl",
             ],
@@ -2173,67 +1308,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libdsi_netctrl",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libdsi_netctrl.so",
-            ],
-            shared_libs: [
-                "libqmi",
-                "libqdi",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libdsutils",
-                "libconfigdb",
-                "libqmiservices",
-                "libqmi_cci",
-                "libqmi_common_so",
-                "libqmi_client_qmux",
-                "libqmi_client_helper",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdsi_netctrl.so",
-            ],
-            shared_libs: [
-                "libqmi",
-                "libqdi",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libdsutils",
-                "libconfigdb",
-                "libqmiservices",
-                "libqmi_cci",
-                "libqmi_common_so",
-                "libqmi_client_qmux",
-                "libqmi_client_helper",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libdsutils",
     owner: "blackberry",
     strip: {
@@ -2249,6 +1323,7 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libcutils",
                 "libmdmdetect",
+                "libnetutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -2264,6 +1339,7 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libcutils",
                 "libmdmdetect",
+                "libnetutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -2934,37 +2010,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libminksocket",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libminksocket.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libminksocket.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libmmosal_proprietary",
     owner: "blackberry",
     strip: {
@@ -2993,206 +2038,6 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcutils",
                 "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libnetmgr",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libnetmgr.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libhardware_legacy",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libnetmgr.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libhardware_legacy",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libnetmgr_common",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libnetmgr_common.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libqmi_cci",
-                "libqmiservices",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libnetmgr_common.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libqmi_cci",
-                "libqmiservices",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libnetmgr_nr_fusion",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libnetmgr_nr_fusion.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libnetmgr_common",
-                "libqmiservices",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libnetmgr_nr_fusion.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libnetmgr_common",
-                "libqmiservices",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libnetmgr_rmnet_ext",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libnetmgr_rmnet_ext.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libnetmgr_common",
-                "librmnetctl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libnetmgr_rmnet_ext.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libconfigdb",
-                "libdiag",
-                "libcutils",
-                "liblog",
-                "libnetmgr",
-                "libnetmgr_common",
-                "librmnetctl",
                 "libc++",
                 "libc",
                 "libm",
@@ -3247,6 +2092,53 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqcci_legacy",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqcci_legacy.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libdiag",
+                "libidl",
+                "libqmi_client_qmux",
+                "libqmi_legacy",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqcci_legacy.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libdiag",
+                "libidl",
+                "libqmi_client_qmux",
+                "libqmi_legacy",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqdi",
     owner: "blackberry",
     strip: {
@@ -3258,7 +2150,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libqdi.so",
             ],
             shared_libs: [
-                "libqmi",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
@@ -3266,6 +2157,7 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libqmi_client_qmux",
                 "libqmi_client_helper",
+                "libqmi",
                 "liblog",
                 "libc++",
                 "libc",
@@ -3278,7 +2170,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqdi.so",
             ],
             shared_libs: [
-                "libqmi",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
@@ -3286,6 +2177,7 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libqmi_client_qmux",
                 "libqmi_client_helper",
+                "libqmi",
                 "liblog",
                 "libc++",
                 "libc",
@@ -3544,12 +2436,12 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libqmi_client_qmux.so",
             ],
             shared_libs: [
-                "libcutils",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
                 "libidl",
                 "liblog",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -3561,12 +2453,12 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqmi_client_qmux.so",
             ],
             shared_libs: [
-                "libcutils",
                 "libdiag",
                 "libdsutils",
                 "libqmiservices",
                 "libidl",
                 "liblog",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -3701,6 +2593,55 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqmi_legacy",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libqmi_legacy.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libqmi_client_qmux",
+                "libdiag",
+                "libdsutils",
+                "libqmiservices",
+                "libidl",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqmi_legacy.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libqmi_client_qmux",
+                "libdiag",
+                "libdsutils",
+                "libqmiservices",
+                "libidl",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqmiservices",
     owner: "blackberry",
     strip: {
@@ -3725,41 +2666,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libidl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libqrtr",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libqrtr.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libqrtr.so",
-            ],
-            shared_libs: [
                 "libc++",
                 "libc",
                 "libm",
@@ -4882,53 +3788,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.ims.callinfo@1.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/vendor.qti.ims.callinfo@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.ims.callinfo@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.imsrtpservice@1.0-service-Impl",
     owner: "blackberry",
     strip: {
@@ -5326,6 +4185,211 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.imscmservice@2.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.imscmservice@2.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.imscmservice@2.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.imscmservice@2.2",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.imscmservice@2.0",
+                "com.qualcomm.qti.imscmservice@2.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.uceservice@2.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.uceservice@2.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.1.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.uceservice@2.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.uceservice@2.2",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.2.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.uceservice@2.0",
+                "com.qualcomm.qti.uceservice@2.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.qualcomm.qti.uceservice@2.3",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.3.so",
+            ],
+            shared_libs: [
+                "com.qualcomm.qti.uceservice@2.0",
+                "com.qualcomm.qti.uceservice@2.1",
+                "com.qualcomm.qti.uceservice@2.2",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "ftm_fm_lib",
     owner: "blackberry",
     strip: {
@@ -5567,6 +4631,482 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsSDP",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsSDP.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "lib-imsdpl",
+                "lib-rtpcommon",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imscmservice",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imscmservice.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libhidlbase",
+                "com.qualcomm.qti.imscmservice@2.0",
+                "lib-imsdpl",
+                "lib-imsqimf",
+                "lib-imsxml",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsdpl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsdpl.so",
+            ],
+            shared_libs: [
+                "libdiag",
+                "libqmiservices",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libtime_genoff",
+                "libcrypto",
+                "libssl",
+                "libandroid_net",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsqimf",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsqimf.so",
+            ],
+            shared_libs: [
+                "lib-imsdpl",
+                "lib-imsxml",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsrcs-v2",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsrcs-v2.so",
+            ],
+            shared_libs: [
+                "lib-imsdpl",
+                "lib-imsqimf",
+                "lib-imsxml",
+                "lib-siputility",
+                "libqmi_cci",
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libhardware_legacy",
+                "libhardware",
+                "libhidlbase",
+                "libqmiservices",
+                "libqti_vndfwk_detect",
+                "lib-rcsconfig",
+                "libidl",
+                "com.qualcomm.qti.imscmservice@2.0",
+                "com.qualcomm.qti.uceservice@2.0",
+                "com.qualcomm.qti.uceservice@2.1",
+                "com.qualcomm.qti.uceservice@2.2",
+                "com.qualcomm.qti.uceservice@2.3",
+                "com.qualcomm.qti.imscmservice@2.1",
+                "com.qualcomm.qti.imscmservice@2.2",
+                "vendor.qti.ims.callinfo@1.0",
+                "vendor.qti.ims.rcsconfig@2.0",
+                "vendor.qti.ims.rcsconfig@2.1",
+                "vendor.qti.ims.factory@1.0",
+                "vendor.qti.ims.factory@1.1",
+                "vendor.qti.ims.callcapability@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsrcsbaseimpl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsrcsbaseimpl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libhardware_legacy",
+                "libhardware",
+                "libhidlbase",
+                "libqmiservices",
+                "libqmi_cci",
+                "libqti_vndfwk_detect",
+                "libidl",
+                "com.qualcomm.qti.imscmservice@2.0",
+                "com.qualcomm.qti.imscmservice@2.1",
+                "com.qualcomm.qti.imscmservice@2.2",
+                "com.qualcomm.qti.uceservice@2.0",
+                "com.qualcomm.qti.uceservice@2.1",
+                "com.qualcomm.qti.uceservice@2.2",
+                "com.qualcomm.qti.uceservice@2.3",
+                "vendor.qti.ims.callinfo@1.0",
+                "vendor.qti.ims.factory@1.0",
+                "vendor.qti.ims.factory@1.1",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsvtcore",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsvtcore.so",
+            ],
+            shared_libs: [
+                "librcc",
+                "libion",
+                "libhidlbase",
+                "vendor.qti.imsrtpservice@3.0",
+                "vendor.qti.imsrtpservice@3.0-service-Impl",
+                "libdiag",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-imsxml",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-imsxml.so",
+            ],
+            shared_libs: [
+                "lib-imsdpl",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rcsconfig",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rcsconfig.so",
+            ],
+            shared_libs: [
+                "lib-imsdpl",
+                "libqmi_cci",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libqmiservices",
+                "libqmi_csi",
+                "libdiag",
+                "libhidlbase",
+                "libhardware_legacy",
+                "libqti_vndfwk_detect",
+                "vendor.qti.ims.rcsconfig@2.0",
+                "vendor.qti.ims.rcsconfig@2.1",
+                "vendor.qti.ims.factory@1.0",
+                "vendor.qti.ims.factory@1.1",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpcommon",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpcommon.so",
+            ],
+            shared_libs: [
+                "libdiag",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "lib-imsdpl",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpcore",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpcore.so",
+            ],
+            shared_libs: [
+                "libdiag",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "lib-imsdpl",
+                "lib-imsvtcore",
+                "lib-rtpcommon",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-rtpsl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-rtpsl.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "lib-imsdpl",
+                "lib-rtpcore",
+                "lib-rtpcommon",
+                "libqti_vndfwk_detect",
+                "libdiag",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-siputility",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-siputility.so",
+            ],
+            shared_libs: [
+                "lib-imsdpl",
+                "lib-imsxml",
+                "lib-imsqimf",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib-uceservice",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib-uceservice.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libhidlbase",
+                "lib-imsdpl",
+                "lib-imsqimf",
+                "lib-imsxml",
+                "lib-siputility",
+                "libqti_vndfwk_detect",
+                "lib-imsSDP",
+                "lib-imscmservice",
+                "com.qualcomm.qti.imscmservice@2.0",
+                "com.qualcomm.qti.uceservice@2.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -5901,6 +5441,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libconfigdb",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libconfigdb.so",
+            ],
+            shared_libs: [
+                "libxml",
+                "libdsutils",
+                "libdiag",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libdataitems",
     owner: "blackberry",
     strip: {
@@ -5974,6 +5542,43 @@ cc_prebuilt_library_shared {
                 "libhardware_legacy",
                 "libhardware",
                 "com.qualcomm.qti.dpm.api@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdsi_netctrl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdsi_netctrl.so",
+            ],
+            shared_libs: [
+                "libqdi",
+                "libdiag",
+                "libcutils",
+                "liblog",
+                "libnetmgr",
+                "libdsutils",
+                "libconfigdb",
+                "libqmiservices",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libqmi_client_qmux",
+                "libqmi_client_helper",
+                "libqmi",
                 "libc++",
                 "libc",
                 "libm",
@@ -6297,6 +5902,159 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libminksocket",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libminksocket.so",
+            ],
+            shared_libs: [
+                "libqrtr",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetmgr",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnetmgr.so",
+            ],
+            shared_libs: [
+                "libdsutils",
+                "libconfigdb",
+                "libdiag",
+                "libcutils",
+                "liblog",
+                "libhardware_legacy",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetmgr_common",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnetmgr_common.so",
+            ],
+            shared_libs: [
+                "libdsutils",
+                "libconfigdb",
+                "libdiag",
+                "libcutils",
+                "liblog",
+                "libnetmgr",
+                "libqmi_cci",
+                "libqmiservices",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetmgr_nr_fusion",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnetmgr_nr_fusion.so",
+            ],
+            shared_libs: [
+                "libdsutils",
+                "libconfigdb",
+                "libdiag",
+                "libcutils",
+                "liblog",
+                "libnetmgr",
+                "libnetmgr_common",
+                "libqmiservices",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetmgr_rmnet_ext",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnetmgr_rmnet_ext.so",
+            ],
+            shared_libs: [
+                "libdsutils",
+                "libconfigdb",
+                "libdiag",
+                "libcutils",
+                "liblog",
+                "libnetmgr",
+                "libnetmgr_common",
+                "librmnetctl",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libnlnetmgr",
     owner: "blackberry",
     strip: {
@@ -6313,6 +6071,8 @@ cc_prebuilt_library_shared {
                 "libdiag",
                 "libcutils",
                 "liblog",
+                "libnetmgr",
+                "libnetmgr_common",
                 "libc++",
                 "libc",
                 "libm",
@@ -6341,36 +6101,6 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "liblog",
                 "libjson",
-                "libqmi_cci",
-                "libqmi_common_so",
-                "libqmi_encdec",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpdnotifier",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libpdnotifier.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
                 "libqmi_cci",
                 "libqmi_common_so",
                 "libqmi_encdec",
@@ -6476,8 +6206,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqcmaputils.so",
             ],
             shared_libs: [
-                "libdsutils",
                 "libdiag",
+                "libdsutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -6504,7 +6234,58 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libdiag",
                 "liblog",
-                "libsettings",
+                "qtimutex",
+                "libril-qc-logger",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqcrildatactl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqcrildatactl.so",
+            ],
+            shared_libs: [
+                "libqmi_cci",
+                "libqmiservices",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqrtr",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqrtr.so",
+            ],
+            shared_libs: [
                 "libc++",
                 "libc",
                 "libm",
@@ -6556,10 +6337,120 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib64/libril-qc-hal-qmi.so",
             ],
+            shared_libs: [
+                "libhidlbase",
+                "vendor.qti.hardware.radio.ims@1.0",
+                "vendor.qti.hardware.radio.ims@1.1",
+                "vendor.qti.hardware.radio.ims@1.2",
+                "vendor.qti.hardware.radio.ims@1.3",
+                "vendor.qti.hardware.radio.ims@1.4",
+                "vendor.qti.hardware.radio.ims@1.5",
+                "vendor.qti.hardware.radio.ims@1.6",
+                "vendor.qti.hardware.radio.ims@1.7",
+                "vendor.qti.hardware.radio.am@1.0",
+                "vendor.qti.hardware.radio.qcrilhook@1.0",
+                "vendor.qti.hardware.radio.uim@1.0",
+                "vendor.qti.hardware.radio.uim@1.1",
+                "vendor.qti.hardware.radio.uim@1.2",
+                "vendor.qti.hardware.radio.uim_remote_server@1.0",
+                "vendor.qti.hardware.radio.uim_remote_client@1.0",
+                "vendor.qti.hardware.radio.uim_remote_client@1.1",
+                "vendor.qti.hardware.radio.uim_remote_client@1.2",
+                "vendor.qti.hardware.radio.lpa@1.0",
+                "vendor.qti.hardware.radio.lpa@1.1",
+                "vendor.qti.hardware.radio.qtiradio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@2.0",
+                "vendor.qti.hardware.radio.qtiradio@2.1",
+                "vendor.qti.hardware.radio.qtiradio@2.2",
+                "vendor.qti.hardware.radio.qtiradio@2.3",
+                "vendor.qti.hardware.radio.qtiradio@2.4",
+                "android.hardware.radio@1.0",
+                "android.hardware.radio.config@1.0",
+                "android.hardware.radio.config@1.1",
+                "android.hardware.radio.config@1.2",
+                "libqcrilFramework",
+                "android.hardware.secure_element@1.0",
+                "android.hardware.secure_element@1.1",
+                "android.hardware.secure_element@1.2",
+                "vendor.qti.hardware.radio.internal.deviceinfo@1.0",
+                "libdsutils",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "qcrild_librilutils",
+                "libqmi_cci",
+                "libqmi_client_qmux",
+                "libdiag",
+                "libhardware_legacy",
+                "libqmiservices",
+                "librilqmiservices",
+                "libqmi_client_helper",
+                "libidl",
+                "libtime_genoff",
+                "libsqlite",
+                "libbinder",
+                "libmdmdetect",
+                "libperipheral_client",
+                "libril-qc-logger",
+                "android.hardware.radio@1.1",
+                "android.hardware.radio@1.2",
+                "android.hardware.radio@1.3",
+                "android.hardware.radio@1.4",
+                "android.hardware.radio@1.5",
+                "android.hardware.radio.deprecated@1.0",
+                "qtimutex",
+                "libprotobuf-cpp-full-3.9.1-vendorcompat",
+                "libvndksupport",
+                "libbase",
+                "libz",
+                "libqdi",
+                "libnetmgr",
+                "libconfigdb",
+                "libxml",
+                "qtibus",
+                "libsystem_health_mon",
+                "libxml2",
+                "libdsi_netctrl",
+                "libqdp",
+                "liblqe",
+                "vendor.qti.hardware.data.iwlan@1.0",
+                "vendor.qti.hardware.data.connection@1.0",
+                "vendor.qti.hardware.data.connection@1.1",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libril-qc-logger",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libril-qc-logger.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libc++",
+                "libdiag",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -6576,75 +6467,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libril-qc-ltedirectdisc.so",
             ],
             shared_libs: [
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libril-qc-qmi-1",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libril-qc-qmi-1.so",
-            ],
-            shared_libs: [
-                "libdsutils",
-                "libcutils",
-                "libutils",
-                "libril",
-                "librilutils",
-                "libril-qc-radioconfig",
-                "libril-qc-ltedirectdisc",
-                "libril-qcril-hook-oem",
-                "libqmi_cci",
-                "libqmi",
-                "libqmi_client_qmux",
-                "libdiag",
-                "libhardware_legacy",
-                "libqmiservices",
-                "librilqmiservices",
-                "libqmi_client_helper",
-                "libidl",
-                "libtime_genoff",
-                "libsqlite",
-                "libmdmdetect",
-                "libperipheral_client",
-                "libsettings",
-                "liblog",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "vendor.qti.hardware.radio.ims@1.0",
-                "vendor.qti.hardware.radio.qcrilhook@1.0",
-                "vendor.qti.hardware.radio.am@1.0",
-                "vendor.qti.hardware.radio.qtiradio@1.0",
-                "vendor.qti.hardware.radio.uim_remote_server@1.0",
-                "vendor.qti.hardware.radio.uim_remote_client@1.0",
-                "vendor.qti.hardware.radio.lpa@1.0",
-                "vendor.qti.hardware.radio.uim@1.0",
-                "vendor.qti.hardware.radio.uim@1.1",
-                "android.hardware.secure_element@1.0",
-                "android.hardware.radio.config@1.0",
-                "android.hardware.radio@1.0",
-                "libsystem_health_mon",
-                "libpdmapper",
-                "libpdnotifier",
-                "libxml2",
-                "libdsi_netctrl",
-                "libqdp",
-                "liblqe",
                 "libc++",
                 "libc",
                 "libm",
@@ -6705,6 +6527,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6750,7 +6573,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libc++",
                 "libdiag",
-                "libprotobuf-cpp-full-vendorcompat",
+                "libprotobuf-cpp-full-3.9.1-vendorcompat",
                 "libc",
                 "libm",
                 "libdl",
@@ -6994,6 +6817,59 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/qcrild_librilutils.so",
             ],
             shared_libs: [
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "qtibus",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/qtibus.so",
+            ],
+            shared_libs: [
+                "qtimutex",
+                "libqcrilFramework",
+                "libril-qc-logger",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "qtimutex",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/qtimutex.so",
+            ],
+            shared_libs: [
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -8100,39 +7976,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.am@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.atcmdfwd@1.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8160,9 +8004,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8191,9 +8033,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "vendor.qti.hardware.radio.ims@1.0",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8223,9 +8063,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "vendor.qti.hardware.radio.ims@1.0",
                 "vendor.qti.hardware.radio.ims@1.1",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8256,9 +8094,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.radio.ims@1.0",
                 "vendor.qti.hardware.radio.ims@1.1",
                 "vendor.qti.hardware.radio.ims@1.2",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8290,9 +8126,137 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.radio.ims@1.1",
                 "vendor.qti.hardware.radio.ims@1.2",
                 "vendor.qti.hardware.radio.ims@1.3",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.5",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.ims@1.0",
+                "vendor.qti.hardware.radio.ims@1.1",
+                "vendor.qti.hardware.radio.ims@1.2",
+                "vendor.qti.hardware.radio.ims@1.3",
+                "vendor.qti.hardware.radio.ims@1.4",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.6",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.ims@1.0",
+                "vendor.qti.hardware.radio.ims@1.1",
+                "vendor.qti.hardware.radio.ims@1.2",
+                "vendor.qti.hardware.radio.ims@1.3",
+                "vendor.qti.hardware.radio.ims@1.4",
+                "vendor.qti.hardware.radio.ims@1.5",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.ims@1.7",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.ims@1.0",
+                "vendor.qti.hardware.radio.ims@1.1",
+                "vendor.qti.hardware.radio.ims@1.2",
+                "vendor.qti.hardware.radio.ims@1.3",
+                "vendor.qti.hardware.radio.ims@1.4",
+                "vendor.qti.hardware.radio.ims@1.5",
+                "vendor.qti.hardware.radio.ims@1.6",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.internal.deviceinfo@1.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8320,9 +8284,36 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.lpa@1.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.lpa@1.0",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8350,9 +8341,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8380,9 +8369,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8412,9 +8399,138 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "android.hardware.radio@1.0",
                 "vendor.qti.hardware.radio.qtiradio@1.0",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@2.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.2",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@2.0",
+                "vendor.qti.hardware.radio.qtiradio@2.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.3",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@2.0",
+                "vendor.qti.hardware.radio.qtiradio@2.1",
+                "vendor.qti.hardware.radio.qtiradio@2.2",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.4",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.0",
+                "android.hardware.radio@1.1",
+                "vendor.qti.hardware.radio.qtiradio@1.0",
+                "vendor.qti.hardware.radio.qtiradio@2.0",
+                "vendor.qti.hardware.radio.qtiradio@2.1",
+                "vendor.qti.hardware.radio.qtiradio@2.2",
+                "vendor.qti.hardware.radio.qtiradio@2.3",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8442,9 +8558,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8473,9 +8587,37 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "vendor.qti.hardware.radio.uim@1.0",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim@1.2",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.uim@1.0",
+                "vendor.qti.hardware.radio.uim@1.1",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8503,9 +8645,66 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim_remote_client@1.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.uim_remote_client@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.uim_remote_client@1.2",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.radio.uim_remote_client@1.0",
+                "vendor.qti.hardware.radio.uim_remote_client@1.1",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8533,9 +8732,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8608,6 +8805,124 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.callcapability@1.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.callcapability@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.callinfo@1.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.callinfo@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.factory@1.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.factory@1.0.so",
+            ],
+            shared_libs: [
+                "vendor.qti.ims.callcapability@1.0",
+                "vendor.qti.ims.rcsconfig@2.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.factory@1.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.factory@1.1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.ims.callcapability@1.0",
+                "vendor.qti.ims.factory@1.0",
+                "vendor.qti.ims.rcsconfig@2.0",
+                "vendor.qti.ims.rcsconfig@2.1",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.ims.rcsconfig@1.0",
     owner: "blackberry",
     strip: {
@@ -8619,9 +8934,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
+                "libhidlbase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -8667,7 +8980,98 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.imsrtpservice@3.0",
+    name: "vendor.qti.ims.rcsconfig@2.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.rcsconfig@2.1",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.ims.rcsconfig@2.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.imsrtpservice@3.0-service-Impl",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libhardware_legacy",
+                "libhardware",
+                "libhidlbase",
+                "libdiag",
+                "vendor.qti.imsrtpservice@3.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.imsrtpservice@3.0_vendor",
+    stem: "vendor.qti.imsrtpservice@3.0",
     owner: "blackberry",
     strip: {
         none: true,
@@ -8749,100 +9153,6 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdiag_system",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system_ext/lib/libdiag_system.so",
-            ],
-            shared_libs: [
-                "vendor.qti.diaghal@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "android.hidl.allocator@1.0",
-                "android.hidl.memory@1.0",
-                "libhidlmemory",
-                "libc",
-                "libcutils",
-                "libc++",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libdiag_system.so",
-            ],
-            shared_libs: [
-                "vendor.qti.diaghal@1.0",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "android.hidl.allocator@1.0",
-                "android.hidl.memory@1.0",
-                "libhidlmemory",
-                "libc",
-                "libcutils",
-                "libc++",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.diaghal@1.0",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/system_ext/lib/vendor.qti.diaghal@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.diaghal@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -8966,6 +9276,7 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/lib-imsvideocodec.so",
             ],
             shared_libs: [
+                "libui_shim",
                 "libgui_shim",
                 "lib-imsvtutils",
                 "lib-imsvtextutils",
@@ -9031,10 +9342,27 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/system_ext/lib64/lib-imsvt.so",
             ],
+            shared_libs: [
+                "lib-imsvideocodec",
+                "libmediandk",
+                "libnativewindow",
+                "libion",
+                "lib-imsvtutils",
+                "libandroid",
+                "libhidlbase",
+                "vendor.qti.imsrtpservice@3.0",
+                "libdiag_system",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     system_ext_specific: true,
 }
@@ -9088,6 +9416,38 @@ cc_prebuilt_library_shared {
                 "libdiag_system",
                 "libc++",
                 "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdiag_system",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libdiag_system.so",
+            ],
+            shared_libs: [
+                "vendor.qti.diaghal@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libhidlmemory",
+                "libc",
+                "libcutils",
+                "libc++",
                 "libm",
                 "libdl",
             ],
@@ -9311,6 +9671,37 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libmwqemiptablemgr",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libmwqemiptablemgr.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libdpmframework",
+                "libdiag_system",
+                "com.qualcomm.qti.dpm.api@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqcc",
     owner: "blackberry",
     strip: {
@@ -9355,6 +9746,34 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.diaghal@1.0",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.diaghal@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -9483,8 +9902,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.imsrtpservice@3.0_ext",
-    stem: "vendor.qti.imsrtpservice@3.0",
+    name: "vendor.qti.imsrtpservice@3.0",
     owner: "blackberry",
     strip: {
         none: true,
@@ -9592,14 +10010,6 @@ android_app_import {
 }
 
 dex_import {
-    name: "tcmclient",
-    owner: "blackberry",
-    jars: [
-        "proprietary/system/framework/tcmclient.jar",
-    ],
-}
-
-dex_import {
     name: "com.qti.dpmframework",
     owner: "blackberry",
     jars: [
@@ -9626,15 +10036,6 @@ dex_import {
     system_ext_specific: true,
 }
 
-dex_import {
-    name: "qti-telephony-common",
-    owner: "blackberry",
-    jars: [
-        "proprietary/system_ext/framework/qti-telephony-common.jar",
-    ],
-    system_ext_specific: true,
-}
-
 prebuilt_etc_xml {
     name: "vendor.qti.gnss@4.0-service.xml",
     owner: "blackberry",
@@ -9645,28 +10046,26 @@ prebuilt_etc_xml {
 }
 
 cc_prebuilt_binary {
-    name: "ATFWD-daemon",
+    name: "adpl",
     owner: "blackberry",
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/bin/ATFWD-daemon",
+                "proprietary/vendor/bin/adpl",
             ],
             shared_libs: [
-                "libcutils",
-                "libutils",
-                "libqmi",
-                "libmdmdetect",
-                "libqmi_client_qmux",
-                "libqmi_client_helper",
-                "libqmiservices",
-                "libqmi_cci",
                 "liblog",
-                "libbase",
-                "libhidlbase-v32",
-                "libhidltransport",
-                "libhwbinder",
-                "vendor.qti.hardware.radio.atcmdfwd@1.0",
+                "librmnetctl",
+                "libqmi_cci",
+                "libdsutils",
+                "libdiag",
+                "libqmiservices",
+                "libqmi",
+                "libnetutils",
+                "libcutils",
+                "libqmi_client_qmux",
+                "libqmi_encdec",
+                "libqcmaputils",
                 "libc++",
                 "libc",
                 "libm",
@@ -10168,20 +10567,19 @@ cc_prebuilt_binary {
                 "libdiag",
                 "libcutils",
                 "liblog",
+                "lib-imsvtcore",
                 "lib-imsdpl",
                 "lib-rtpsl",
                 "lib-rtpcore",
-                "lib-rtpdaemoninterface",
                 "lib-rtpcommon",
                 "libqmiservices",
                 "libqmi_csi",
                 "libqmi_cci",
-                "vendor.qti.imsrtpservice@1.0",
-                "vendor.qti.imsrtpservice@1.0-service-Impl",
+                "vendor.qti.imsrtpservice@3.0",
+                "vendor.qti.imsrtpservice@3.0-service-Impl",
                 "libutils",
-                "libhwbinder",
-                "libhidlbase-v32",
-                "libhidltransport",
+                "libhidlbase",
+                "libavservices_minijail",
                 "libc++",
                 "libc",
                 "libm",
@@ -10217,7 +10615,7 @@ cc_prebuilt_binary {
                 "libcneapiclient",
                 "libandroid_net",
                 "libutils",
-                "libhwbinder",
+                "libhidlbase",
                 "libc++",
                 "libc",
                 "libm",
@@ -10276,9 +10674,7 @@ cc_prebuilt_binary {
             shared_libs: [
                 "liblog",
                 "libbase",
-                "libhwbinder",
-                "libhidlbase-v32",
-                "libhidltransport",
+                "libhidlbase",
                 "libcutils",
                 "libutils",
                 "libc++",
@@ -10490,17 +10886,17 @@ cc_prebuilt_binary {
                 "libnlnetmgr",
                 "libnetmgr",
                 "libnetmgr_common",
-                "libqmi",
                 "libqmiservices",
-                "libqmi_cci",
                 "libqmi_common_so",
+                "libqmi_cci",
                 "libqmi_client_qmux",
                 "libqmi_client_helper",
+                "libqmi",
                 "libutils",
-                "libhidlbase-v32",
-                "libhidltransport",
+                "libhidlbase",
                 "libandroid_net",
                 "android.system.net.netd@1.1",
+                "libqti_vndfwk_detect",
                 "libcneapiclient",
                 "libbinder",
                 "libc++",
@@ -10613,6 +11009,108 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "port-bridge",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/port-bridge",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "libdsutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qrtr-cfg",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qrtr-cfg",
+            ],
+            shared_libs: [
+                "libqrtr",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qrtr-lookup",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qrtr-lookup",
+            ],
+            shared_libs: [
+                "libqrtr",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qrtr-ns",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qrtr-ns",
+            ],
+            shared_libs: [
+                "libqrtr",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "qseecomd",
     owner: "blackberry",
     target: {
@@ -10626,6 +11124,42 @@ cc_prebuilt_binary {
                 "liblog",
                 "libQSEEComAPI",
                 "libdrmfs",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qti",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qti",
+            ],
+            shared_libs: [
+                "liblog",
+                "librmnetctl",
+                "libqmi_cci",
+                "libdsutils",
+                "libdiag",
+                "libqmiservices",
+                "libqmi",
+                "libnetutils",
+                "libcutils",
+                "libqmi_client_qmux",
+                "libqmi_encdec",
+                "libqcmaputils",
                 "libc++",
                 "libc",
                 "libm",
