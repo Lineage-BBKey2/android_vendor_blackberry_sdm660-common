@@ -140,12 +140,14 @@ PRODUCT_PACKAGES += \
     libEGL_adreno \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
-    libQTapGLES \
     libq3dtools_adreno \
+    libVkLayer_q3dtools \
+    libgpudataproducer \
+    libperfgluelayer \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.keymaster@3.0-impl-qti \
     sound_trigger.primary.sdm660 \
-    vulkan.sdm660 \
+    vulkan.adreno \
     lib-dplmedia \
     libC2D2 \
     libCB \
@@ -153,7 +155,6 @@ PRODUCT_PACKAGES += \
     libGPreqcancel_svc \
     libOpenCL \
     libQSEEComAPI \
-    libRSDriver_adreno \
     libStDrvInt \
     libadreno_utils \
     libbccQTI \
@@ -196,7 +197,6 @@ PRODUCT_PACKAGES += \
     libqsocket \
     librpmb \
     librs_adreno \
-    librs_adreno_sha1 \
     libsdm-color \
     libsdm-diag \
     libsdm-disp-vndapis \
@@ -472,8 +472,6 @@ PRODUCT_PACKAGES += \
     vendor_lib_libGLESv2_adreno_so \
     vendor_lib_libq3dtools_adreno_so \
     vendor_lib_libq3dtools_esx_so \
-    vendor_lib_hw_vulkan_adreno_so \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
-    vendor_lib64_libq3dtools_adreno_so \
-    vendor_lib64_hw_vulkan_adreno_so
+    vendor_lib64_libq3dtools_adreno_so
