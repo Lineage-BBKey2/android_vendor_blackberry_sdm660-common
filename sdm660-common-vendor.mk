@@ -456,6 +456,7 @@ PRODUCT_PACKAGES += \
     tftp_server \
     thermal-engine \
     time_daemon \
+    trace_util \
     xtra-daemon \
     xtwifi-client \
     xtwifi-inet-agent \

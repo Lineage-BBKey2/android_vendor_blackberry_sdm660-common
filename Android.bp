@@ -10898,6 +10898,24 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "trace_util",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/trace_util",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "xtra-daemon",
     owner: "blackberry",
     target: {
