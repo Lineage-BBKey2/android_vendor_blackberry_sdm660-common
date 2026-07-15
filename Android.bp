@@ -5387,34 +5387,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libloc_pla",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libloc_pla.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libcutils",
-                "liblog",
-                "libloc_stub",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libloc_socket",
     owner: "blackberry",
     strip: {
@@ -5431,33 +5403,6 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libgps.utils",
                 "libqsocket",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libloc_stub",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libloc_stub.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libcutils",
-                "liblog",
                 "libc++",
                 "libc",
                 "libm",
