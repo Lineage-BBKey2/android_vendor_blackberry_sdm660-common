@@ -9650,6 +9650,14 @@ android_app_import {
 }
 
 dex_import {
+    name: "com.blackberry.only",
+    owner: "blackberry",
+    jars: [
+        "proprietary/system/framework/com.blackberry.only.jar",
+    ],
+}
+
+dex_import {
     name: "com.qti.dpmframework",
     owner: "blackberry",
     jars: [

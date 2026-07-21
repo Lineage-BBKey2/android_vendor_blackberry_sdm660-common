@@ -418,6 +418,7 @@ PRODUCT_PACKAGES += \
     dpmserviceapp \
     ims \
     qcrilmsgtunnel \
+    com.blackberry.only \
     com.qti.dpmframework \
     dpmapi \
     qcrilhook \
