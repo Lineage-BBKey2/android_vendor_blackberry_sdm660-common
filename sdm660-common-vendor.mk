@@ -141,9 +141,7 @@ PRODUCT_PACKAGES += \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
     libq3dtools_adreno \
-    libVkLayer_q3dtools \
-    libgpudataproducer \
-    libperfgluelayer \
+    libq3dtools_esx \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.keymaster@3.0-impl-qti \
     sound_trigger.primary.sdm660 \
@@ -156,6 +154,7 @@ PRODUCT_PACKAGES += \
     libOpenCL \
     libQSEEComAPI \
     libStDrvInt \
+    libVkLayer_q3dtools \
     libadreno_utils \
     libbccQTI \
     libc2d30_bltlib \
@@ -169,6 +168,7 @@ PRODUCT_PACKAGES += \
     libgcs-ipc \
     libgcs-osal \
     libgcs \
+    libgpudataproducer \
     libgpustats \
     libgsl \
     libhdr_tm \
@@ -180,6 +180,7 @@ PRODUCT_PACKAGES += \
     libllvm-qcom \
     libmdmdetect \
     libmmosal_proprietary \
+    libperfgluelayer \
     libqcci_legacy \
     libqdi \
     libqdp \
@@ -201,7 +202,6 @@ PRODUCT_PACKAGES += \
     libsdm-diag \
     libsdm-disp-vndapis \
     libsdmextension \
-    libsdmutils \
     libsecureui \
     libsecureui_svcsock \
     libsensor1 \
@@ -214,7 +214,6 @@ PRODUCT_PACKAGES += \
     sensor_calibrate \
     sensors.ssc \
     vendor.qti.hardware.qteeconnector@1.0 \
-    libq3dtools_esx \
     android.hardware.drm@1.0-impl \
     libOmxVideoDSMode \
     libadpcmdec \

@@ -272,7 +272,6 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
         android_arm64: {
@@ -289,7 +288,6 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
     },
@@ -320,7 +318,6 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
         android_arm64: {
@@ -336,7 +333,6 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
     },
@@ -369,7 +365,6 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
         android_arm64: {
@@ -387,7 +382,6 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
     },
@@ -397,51 +391,6 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
-
-//cc_prebuilt_library_shared {
-//    name: "libQTapGLES",
-//    owner: "blackberry",
-//    strip: {
-//        none: true,
-//    },
-//    target: {
-//        android_arm: {
-//            srcs: [
-//                "proprietary/vendor/lib/egl/libQTapGLES.so",
-//            ],
-//            shared_libs: [
-//                "libcutils",
-//                "libdl",
-//                "libz",
-//                "liblog",
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//        android_arm64: {
-//            srcs: [
-//                "proprietary/vendor/lib64/egl/libQTapGLES.so",
-//            ],
-//            shared_libs: [
-//                "libcutils",
-//                "libdl",
-//                "libz",
-//                "liblog",
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//    },
-//    compile_multilib: "both",
-//    check_elf_files: false,
-//    relative_install_path: "egl",
-//    prefer: true,
-//    soc_specific: true,
-//}
 
 cc_prebuilt_library_shared {
     name: "libq3dtools_adreno",
@@ -476,6 +425,49 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    relative_install_path: "egl",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libq3dtools_esx",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/egl/libq3dtools_esx.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libz",
+                "libdl",
+                "libc++",
+                "libc",
+                "libm",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/egl/libq3dtools_esx.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libz",
+                "libdl",
+                "libc++",
+                "libc",
+                "libm",
             ],
         },
     },
@@ -636,58 +628,72 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-//cc_prebuilt_library_shared {
-//    name: "vulkan.sdm660",
-//    owner: "blackberry",
-//    strip: {
-//        none: true,
-//    },
-//    target: {
-//        android_arm: {
-//            srcs: [
-//                "proprietary/vendor/lib/hw/vulkan.sdm660.so",
-//            ],
-//            shared_libs: [
-//                "libadreno_utils",
-//                "libgsl",
-//                "libz",
-//                "liblog",
-//                "libllvm-glnext",
-//                "libcutils",
-//                "libhardware",
-//                "libnativewindow",
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//        android_arm64: {
-//            srcs: [
-//                "proprietary/vendor/lib64/hw/vulkan.sdm660.so",
-//            ],
-//            shared_libs: [
-//                "libadreno_utils",
-//                "libgsl",
-//                "libz",
-//                "liblog",
-//                "libllvm-glnext",
-//                "libcutils",
-//                "libhardware",
-//                "libnativewindow",
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//    },
-//    compile_multilib: "both",
-//    check_elf_files: false,
-//    relative_install_path: "hw",
-//    prefer: true,
-//    soc_specific: true,
-//}
+cc_prebuilt_library_shared {
+    name: "vulkan.adreno",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/vulkan.adreno.so",
+            ],
+            shared_libs: [
+                "libadreno_utils",
+                "libgsl",
+                "libz",
+                "liblog",
+                "libllvm-glnext",
+                "libcutils",
+                "libhardware",
+                "libnativewindow",
+                "vendor.qti.hardware.display.mapper@2.0",
+                "android.hardware.graphics.mapper@2.0",
+                "vendor.qti.hardware.display.mapper@3.0",
+                "android.hardware.graphics.mapper@3.0",
+                "vendor.qti.hardware.display.mapperextensions@1.1",
+                "libhidlbase",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vulkan.adreno.so",
+            ],
+            shared_libs: [
+                "libadreno_utils",
+                "libgsl",
+                "libz",
+                "liblog",
+                "libllvm-glnext",
+                "libcutils",
+                "libhardware",
+                "libnativewindow",
+                "vendor.qti.hardware.display.mapper@2.0",
+                "android.hardware.graphics.mapper@2.0",
+                "vendor.qti.hardware.display.mapper@3.0",
+                "android.hardware.graphics.mapper@3.0",
+                "vendor.qti.hardware.display.mapperextensions@1.1",
+                "libhidlbase",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
 
 cc_prebuilt_library_shared {
     name: "lib-dplmedia",
@@ -758,7 +764,6 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libCB",
     owner: "blackberry",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -811,6 +816,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -916,6 +922,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libcutils",
+                "libvndksupport",
                 "libc++",
                 "libc",
                 "libm",
@@ -928,6 +935,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libcutils",
+                "libvndksupport",
                 "libc++",
                 "libc",
                 "libm",
@@ -982,60 +990,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-//cc_prebuilt_library_shared {
-//    name: "libRSDriver_adreno",
-//    owner: "blackberry",
-//    strip: {
-//        none: true,
-//    },
-//    target: {
-//        android_arm: {
-//            srcs: [
-//                "proprietary/vendor/lib/libRSDriver_adreno.so",
-//            ],
-//            shared_libs: [
-//                "libRS_internal",
-//                "libRSCpuRef",
-//                "liblog",
-//                "libEGL",
-//                "libGLESv1_CM",
-//                "libGLESv2",
-//                "libnativewindow",
-//                "librs_adreno",
-//                "libbcinfo",
-//                "libdl",
-//                "libc++",
-//                "libc",
-//                "libm",
-//            ],
-//        },
-//        android_arm64: {
-//            srcs: [
-//                "proprietary/vendor/lib64/libRSDriver_adreno.so",
-//            ],
-//            shared_libs: [
-//                "libRS_internal",
-//                "libRSCpuRef",
-//                "liblog",
-//                "libEGL",
-//                "libGLESv1_CM",
-//                "libGLESv2",
-//                "libnativewindow",
-//                "librs_adreno",
-//                "libbcinfo",
-//                "libdl",
-//                "libc++",
-//                "libc",
-//                "libm",
-//            ],
-//        },
-//    },
-//    compile_multilib: "both",
-//    check_elf_files: false,
-//    prefer: true,
-//    soc_specific: true,
-//}
-
 cc_prebuilt_library_shared {
     name: "libStDrvInt",
     owner: "blackberry",
@@ -1069,6 +1023,44 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libVkLayer_q3dtools",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libVkLayer_q3dtools.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libz",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libVkLayer_q3dtools.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libz",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -1608,6 +1600,46 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libgpudataproducer",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libgpudataproducer.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libz",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgpudataproducer.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libz",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libgpustats",
     owner: "blackberry",
     strip: {
@@ -1655,7 +1687,6 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libgsl",
     owner: "blackberry",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -1694,6 +1725,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -2063,6 +2095,48 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libperfgluelayer",
+    owner: "blackberry",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libperfgluelayer.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libperfgluelayer.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -2809,42 +2883,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-//cc_prebuilt_library_shared {
-//    name: "librs_adreno_sha1",
-//    owner: "blackberry",
-//    strip: {
-//        none: true,
-//    },
-//    target: {
-//        android_arm: {
-//            srcs: [
-//                "proprietary/vendor/lib/librs_adreno_sha1.so",
-//            ],
-//            shared_libs: [
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//        android_arm64: {
-//            srcs: [
-//                "proprietary/vendor/lib64/librs_adreno_sha1.so",
-//            ],
-//            shared_libs: [
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//    },
-//    compile_multilib: "both",
-//    check_elf_files: false,
-//    prefer: true,
-//    soc_specific: true,
-//}
-
 cc_prebuilt_library_shared {
     name: "libsdm-color",
     owner: "blackberry",
@@ -3016,41 +3054,6 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
-
-//cc_prebuilt_library_shared {
-//    name: "libsdmutils",
-//    owner: "blackberry",
-//    strip: {
-//        none: true,
-//    },
-//    target: {
-//        android_arm: {
-//            srcs: [
-//                "proprietary/vendor/lib/libsdmutils.so",
-//            ],
-//            shared_libs: [
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//        android_arm64: {
-//            srcs: [
-//                "proprietary/vendor/lib64/libsdmutils.so",
-//            ],
-//            shared_libs: [
-//                "libc++",
-//                "libc",
-//                "libm",
-//                "libdl",
-//            ],
-//        },
-//    },
-//    compile_multilib: "both",
-//    prefer: true,
-//    soc_specific: true,
-//}
 
 cc_prebuilt_library_shared {
     name: "libsecureui",
@@ -3559,86 +3562,6 @@ cc_prebuilt_library_shared {
                 "libdl",
             ],
         },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libq3dtools_esx",
-    owner: "blackberry",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: ["proprietary/vendor/lib/egl/libq3dtools_esx.so"],
-            shared_libs: ["libcutils", "libdl", "libz", "liblog", "libc++", "libc", "libm"],
-        },
-        android_arm64: {
-            srcs: ["proprietary/vendor/lib64/egl/libq3dtools_esx.so"],
-            shared_libs: ["libcutils", "libdl", "libz", "liblog", "libc++", "libc", "libm"],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    relative_install_path: "egl",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vulkan.adreno",
-    owner: "blackberry",
-    strip: { none: true },
-    check_elf_files: false,
-    target: {
-        android_arm: { srcs: ["proprietary/vendor/lib/hw/vulkan.adreno.so"] },
-        android_arm64: { srcs: ["proprietary/vendor/lib64/hw/vulkan.adreno.so"] },
-    },
-    compile_multilib: "both",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libVkLayer_q3dtools",
-    owner: "blackberry",
-    strip: { none: true },
-    check_elf_files: false,
-    target: {
-        android_arm: { srcs: ["proprietary/vendor/lib/libVkLayer_q3dtools.so"] },
-        android_arm64: { srcs: ["proprietary/vendor/lib64/libVkLayer_q3dtools.so"] },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libgpudataproducer",
-    owner: "blackberry",
-    strip: { none: true },
-    check_elf_files: false,
-    target: {
-        android_arm: { srcs: ["proprietary/vendor/lib/libgpudataproducer.so"] },
-        android_arm64: { srcs: ["proprietary/vendor/lib64/libgpudataproducer.so"] },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libperfgluelayer",
-    owner: "blackberry",
-    strip: { none: true },
-    check_elf_files: false,
-    target: {
-        android_arm: { srcs: ["proprietary/vendor/lib/libperfgluelayer.so"] },
-        android_arm64: { srcs: ["proprietary/vendor/lib64/libperfgluelayer.so"] },
     },
     compile_multilib: "both",
     prefer: true,
@@ -11191,8 +11114,6 @@ install_symlink {
     symlink_target: "/vendor/lib/egl/libq3dtools_esx.so",
 }
 
-// vendor_lib_hw_vulkan_adreno_so removed — vulkan.adreno is the real blob now
-
 install_symlink {
     name: "vendor_lib64_libEGL_adreno_so",
     soc_specific: true,
@@ -11213,5 +11134,3 @@ install_symlink {
     installed_location: "lib64/libq3dtools_adreno.so",
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
 }
-
-// vendor_lib64_hw_vulkan_adreno_so removed — see above
