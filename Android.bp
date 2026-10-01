@@ -1824,6 +1824,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libkeymasterdeviceutils.so",
             ],
             shared_libs: [
+                "libkeymasterprop",
                 "libcutils",
                 "libQSEEComAPI",
                 "liblog",
@@ -1840,6 +1841,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libkeymasterdeviceutils.so",
             ],
             shared_libs: [
+                "libkeymasterprop",
                 "libcutils",
                 "libQSEEComAPI",
                 "liblog",
