@@ -11134,3 +11134,28 @@ install_symlink {
     installed_location: "lib64/libq3dtools_adreno.so",
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
 }
+
+// CABL command client, matching the pinned proprietary-files entry.
+cc_prebuilt_binary {
+    name: "ppd",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/ppd"],
+            shared_libs: [
+                "libutils",
+                "libhidltransport",
+                "libhidlbase",
+                "vendor.display.postproc@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: { none: true },
+    prefer: true,
+    soc_specific: true,
+}
