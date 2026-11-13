@@ -476,3 +476,21 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so
+
+# QTI A2DP client: dependencies install both matching session libraries.
+PRODUCT_PACKAGES += \
+    btaudio_offload_if \
+    libbluetooth_audio_session_qti \
+    libbluetooth_audio_session_qti_2_1
+
+PRODUCT_COPY_FILES += \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apbtfw11.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apbtfw11.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apnv11.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apnv11.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw21.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw21.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv21.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv21.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apbtfw10.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apbtfw10.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apnv10.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apnv10.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw11.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw11.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw20.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw20.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv11.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv11.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv20.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv20.bin
