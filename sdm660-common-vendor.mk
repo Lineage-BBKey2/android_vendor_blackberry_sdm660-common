@@ -6,7 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/blackberry/sdm660-common
 
 PRODUCT_COPY_FILES += \
-    vendor/blackberry/sdm660-common/proprietary/vendor/etc/CABLConfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/CABLConfig.xml \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
@@ -15,6 +14,17 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_libpermissions.xml \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_permissions.xml \
     vendor/blackberry/sdm660-common/proprietary/system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apbtfw10.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apbtfw10.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apbtfw11.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apbtfw11.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apnv10.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apnv10.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apnv11.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apnv11.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw11.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw11.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw20.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw20.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw21.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw21.tlv \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv11.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv11.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv20.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv20.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv21.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv21.bin \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/CABLConfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/CABLConfig.xml \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cacert_location.pem:$(TARGET_COPY_OUT_VENDOR)/etc/cacert_location.pem \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cne/mwqem.conf:$(TARGET_COPY_OUT_VENDOR)/etc/cne/mwqem.conf \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/cne/profileMwqem.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/profileMwqem.xml \
@@ -134,6 +144,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.qualcomm.qti.ant@1.0 \
+    btaudio_offload_if \
     com.quicinc.cne.constants@1.0 \
     com.quicinc.cne.constants@2.0 \
     com.quicinc.cne.server@2.0 \
@@ -158,6 +169,8 @@ PRODUCT_PACKAGES += \
     libVkLayer_q3dtools \
     libadreno_utils \
     libbccQTI \
+    libbluetooth_audio_session_qti \
+    libbluetooth_audio_session_qti_2_1 \
     libc2d30_bltlib \
     libdiag \
     libdrmfs \
@@ -443,13 +456,13 @@ PRODUCT_PACKAGES += \
     lowi-server \
     mlid \
     mm-pp-dpps \
-    ppd \
     msm_irqbalance \
     netmgrd \
     pd-mapper \
     pm-proxy \
     pm-service \
     port-bridge \
+    ppd \
     qrtr-cfg \
     qrtr-lookup \
     qrtr-ns \
@@ -476,21 +489,3 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so
-
-# QTI A2DP client: dependencies install both matching session libraries.
-PRODUCT_PACKAGES += \
-    btaudio_offload_if \
-    libbluetooth_audio_session_qti \
-    libbluetooth_audio_session_qti_2_1
-
-PRODUCT_COPY_FILES += \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apbtfw11.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apbtfw11.tlv \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apnv11.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apnv11.bin \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw21.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw21.tlv \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv21.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv21.bin \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apbtfw10.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apbtfw10.tlv \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/apnv10.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/apnv10.bin \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw11.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw11.tlv \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crbtfw20.tlv:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crbtfw20.tlv \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv11.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv11.bin \
-    vendor/blackberry/sdm660-common/proprietary/vendor/bt_firmware/image/crnv20.bin:$(TARGET_COPY_OUT_VENDOR)/bt_firmware/image/crnv20.bin
